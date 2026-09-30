@@ -7,6 +7,7 @@ from app.alerts.router import router as alerts_router
 from app.config import settings
 from app.core import integrations
 from app.core.deps import get_engine
+from app.geo.router import router as geo_router
 from app.hotspots.router import router as hotspots_router
 from app.interop.router import router as interop_router
 from app.localization.router import router as localization_router
@@ -25,10 +26,12 @@ app = FastAPI(title=settings.project_name, lifespan=lifespan)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[o.strip() for o in settings.cors_origins.split(",") if o.strip()],
+    allow_origin_regex=settings.cors_origin_regex or None,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-for r in (reports_router, sensors_router, hotspots_router, alerts_router, localization_router, interop_router):
+for r in (reports_router, sensors_router, hotspots_router, alerts_router, localization_router, interop_router,
+          geo_router):
     app.include_router(r)
 
 

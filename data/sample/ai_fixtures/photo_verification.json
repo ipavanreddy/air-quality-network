@@ -1,14 +1,14 @@
 {
  "by_sha256": {
-  "27148619109fe5876f2806527da7d7b242bb602cb27c27d06667771fa3f41535": {
-   "file": "clear_sky_park.png",
+  "0172fd18fce20e78e2c2eb4af3954fa0ddf58d348a0c69730545cbb3ffedd7fe": {
+   "file": "clear_sky_park.jpg",
    "verification": {
     "confidence": 0.93,
     "explanation": "No smoke, dust or haze visible; image does not show a pollution event.",
     "image_quality_ok": true,
     "is_pollution_event": false,
     "observed_indicators": [
-     "clear sky",
+     "clear blue sky",
      "green vegetation"
     ],
     "requires_human_review": false,
@@ -16,51 +16,51 @@
     "visual_severity": 0
    }
   },
-  "4bbacbef1c13da02ba62609fe339d39cba493f4989c8140163f4771982ac4f7a": {
-   "file": "industrial_smoke_night.png",
+  "5474ec91d4fccfaae34aa962be7648a8f179ba3e19e12fd26fda1e48a993d9e9": {
+   "file": "industrial_chimney_smoke.jpg",
    "verification": {
     "confidence": 0.86,
-    "explanation": "Dense smoke rising from a chimney in an industrial setting at night.",
+    "explanation": "A dense smoke plume is rising from an industrial chimney.",
     "image_quality_ok": true,
     "is_pollution_event": true,
     "observed_indicators": [
-     "dark smoke plume from a stack",
-     "night-time emission",
-     "industrial structures"
+     "dense smoke plume from a tall stack",
+     "continuous emission",
+     "industrial chimney"
     ],
     "requires_human_review": false,
     "source_type": "industrial_emission",
     "visual_severity": 4
    }
   },
-  "4c63544dcbae6ea4602d8574e12f6e21096ef5a13902b3a762b4f0aebdfbd269": {
-   "file": "crop_burning_field.png",
+  "ac6882d81021dfbdd3a40766ad5710fa6cc33073c15a8d46969d9f09cac2f6f6": {
+   "file": "crop_burning_field.jpg",
    "verification": {
     "confidence": 0.87,
-    "explanation": "Open flames along harvested stubble rows with a large smoke plume.",
+    "explanation": "Thick smoke from burning crop residue over a harvested field.",
     "image_quality_ok": true,
     "is_pollution_event": true,
     "observed_indicators": [
-     "open flames",
-     "dense grey smoke",
-     "stubble rows"
+     "dense smoke over a harvested field",
+     "burning stubble",
+     "low visibility"
     ],
     "requires_human_review": false,
     "source_type": "crop_residue_burning",
     "visual_severity": 4
    }
   },
-  "a7816c1d1b40de28eb50acd3a27ca16a5b88b1bdd449450672c2016a0c77e559": {
-   "file": "construction_dust_site.png",
+  "bdd1bb68635654cb2d23f31cf75d4e1d3fac0f06d9f46b1e10d05d1ab7770852": {
+   "file": "construction_dust_site.jpg",
    "verification": {
     "confidence": 0.82,
-    "explanation": "Dust haze over an active construction site with no visible covering or sprinkling.",
+    "explanation": "A dust cloud from demolition work with no visible dust suppression.",
     "image_quality_ok": true,
     "is_pollution_event": true,
     "observed_indicators": [
      "visible dust cloud",
-     "uncovered construction site",
-     "building frame"
+     "excavator demolishing a structure",
+     "no water spraying"
     ],
     "requires_human_review": false,
     "source_type": "construction_dust",
@@ -71,13 +71,13 @@
  "default_by_source": {
   "construction_dust": {
    "confidence": 0.82,
-   "explanation": "Dust haze over an active construction site with no visible covering or sprinkling.",
+   "explanation": "A dust cloud from demolition work with no visible dust suppression.",
    "image_quality_ok": true,
    "is_pollution_event": true,
    "observed_indicators": [
     "visible dust cloud",
-    "uncovered construction site",
-    "building frame"
+    "excavator demolishing a structure",
+    "no water spraying"
    ],
    "requires_human_review": false,
    "source_type": "construction_dust",
@@ -85,13 +85,13 @@
   },
   "crop_residue_burning": {
    "confidence": 0.87,
-   "explanation": "Open flames along harvested stubble rows with a large smoke plume.",
+   "explanation": "Thick smoke from burning crop residue over a harvested field.",
    "image_quality_ok": true,
    "is_pollution_event": true,
    "observed_indicators": [
-    "open flames",
-    "dense grey smoke",
-    "stubble rows"
+    "dense smoke over a harvested field",
+    "burning stubble",
+    "low visibility"
    ],
    "requires_human_review": false,
    "source_type": "crop_residue_burning",
@@ -99,13 +99,13 @@
   },
   "industrial_emission": {
    "confidence": 0.86,
-   "explanation": "Dense smoke rising from a chimney in an industrial setting at night.",
+   "explanation": "A dense smoke plume is rising from an industrial chimney.",
    "image_quality_ok": true,
    "is_pollution_event": true,
    "observed_indicators": [
-    "dark smoke plume from a stack",
-    "night-time emission",
-    "industrial structures"
+    "dense smoke plume from a tall stack",
+    "continuous emission",
+    "industrial chimney"
    ],
    "requires_human_review": false,
    "source_type": "industrial_emission",
@@ -117,7 +117,7 @@
    "image_quality_ok": true,
    "is_pollution_event": false,
    "observed_indicators": [
-    "clear sky",
+    "clear blue sky",
     "green vegetation"
    ],
    "requires_human_review": false,
@@ -133,6 +133,6 @@
   "is_synthetic": true,
   "notes": "",
   "reference_timestamp": "2026-11-05T03:00:00+05:30",
-  "source": "Fixture Gemini photo-verification outputs for the generated sample photos (demo mode only)"
+  "source": "Fixture Gemini photo-verification outputs for the CC-licensed sample photos (demo mode only; live mode sends them to Gemini)"
  }
 }

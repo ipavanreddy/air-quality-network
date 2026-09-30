@@ -1,4 +1,5 @@
 """Gemini orchestration: structured context in, schema-validated JSON out, versioned."""
+import os
 from datetime import UTC, datetime
 from functools import lru_cache
 
@@ -18,15 +19,25 @@ class AIProvenance(BaseModel):
     generated_at: datetime
 
 
+# Vertex AI's shared (dynamic) quota returns occasional 429s; retry briefly before falling back.
+RETRY = types.HttpOptions(retry_options=types.HttpRetryOptions(
+    attempts=4, initial_delay=1.5, max_delay=12, http_status_codes=[429, 500, 503, 504]))
+
+
 @lru_cache
 def client() -> genai.Client:
     if settings.google_genai_use_vertexai:
+        # google-genai reads GOOGLE_API_KEY / GEMINI_API_KEY from the environment and would then try the
+        # Gemini Developer API instead of Vertex AI. Vertex mode authenticates with the service account.
+        for var in ("GOOGLE_API_KEY", "GEMINI_API_KEY"):
+            os.environ.pop(var, None)
         return genai.Client(
             vertexai=True,
             project=settings.google_cloud_project,
             location=settings.google_cloud_location,
+            http_options=RETRY,
         )
-    return genai.Client(api_key=settings.gemini_api_key)
+    return genai.Client(api_key=settings.gemini_api_key, http_options=RETRY)
 
 
 def load_prompt(name: str, version: str) -> str:

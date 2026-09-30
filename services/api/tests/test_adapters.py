@@ -111,10 +111,10 @@ def test_json_schemas_in_sync():
 
 def test_photo_fixtures_and_irrelevant_image_flagged():
     photos = settings.sample_data_dir / "photos"
-    v, prov = ai.verify_photo((photos / "clear_sky_park.png").read_bytes(), "image/png", {}, "industrial_emission")
+    v, prov = ai.verify_photo((photos / "clear_sky_park.jpg").read_bytes(), "image/jpeg", {}, "industrial_emission")
     assert v.is_pollution_event is False
     assert prov["mode"] == "demo_fixture" and prov["prompt_version"] == "photo_verification_v1"
-    v, _ = ai.verify_photo((photos / "crop_burning_field.png").read_bytes(), "image/png", {}, "industrial_emission")
+    v, _ = ai.verify_photo((photos / "crop_burning_field.jpg").read_bytes(), "image/jpeg", {}, "industrial_emission")
     assert v.source_type == "crop_residue_burning" and v.confidence > 0.8
     v, prov = ai.verify_photo(b"tiny", "image/png", {}, "industrial_emission")
     assert v.image_quality_ok is False and v.requires_human_review

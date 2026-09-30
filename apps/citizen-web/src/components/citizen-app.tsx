@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -59,7 +59,10 @@ type Report = {
     threshold: number;
   };
   note?: string;
+  address?: { formatted_address: string; locality: string | null; source: string } | null;
 };
+
+type GeoResult = { formatted_address: string; locality: string | null; lat: number; lon: number };
 
 type Advisory = {
   advisory_id: string;
@@ -68,7 +71,7 @@ type Advisory = {
   approved_at: string;
 };
 
-type SamplePhoto = { name: string; url: string };
+type SamplePhoto = { name: string; url: string; attribution?: string; source_url?: string };
 
 const STORAGE_KEY = "vayudrishti.reports";
 const REPORTER_KEY = "vayudrishti.reporter";
@@ -116,6 +119,12 @@ export function CitizenApp() {
   const [result, setResult] = useState<Report | null>(null);
   const [mine, setMine] = useState<Report[]>([]);
   const [voiceNote, setVoiceNote] = useState<string | null>(null);
+  const [query, setQuery] = useState("");
+  const [geoResults, setGeoResults] = useState<GeoResult[]>([]);
+  const [geoNote, setGeoNote] = useState<string | null>(null);
+  const [recording, setRecording] = useState(false);
+  const [sttNote, setSttNote] = useState<string | null>(null);
+  const recorder = useRef<MediaRecorder | null>(null);
 
   useEffect(() => {
     apiGet<SamplePhoto[]>("/api/samples/photos").then(setSamples).catch(() => {});
@@ -179,7 +188,7 @@ export function CitizenApp() {
 
   async function pickSample(s: SamplePhoto) {
     const blob = await (await fetch(`${API_URL}${s.url}`)).blob();
-    choose(new File([blob], s.name, { type: "image/png" }));
+    choose(new File([blob], s.name, { type: blob.type || "image/jpeg" }));
   }
 
   function locateMe() {
@@ -187,6 +196,67 @@ export function CitizenApp() {
       (p) => setPlace({ label: "My location", lat: p.coords.latitude, lon: p.coords.longitude }),
       () => setError("Location permission denied; choose a place instead."),
     );
+  }
+
+  async function searchPlace() {
+    if (query.trim().length < 2) return;
+    setGeoNote(null);
+    try {
+      const res = await apiGet<{ mode: string; results: GeoResult[]; note?: string }>(
+        `/api/geocode?q=${encodeURIComponent(query)}`,
+      );
+      setGeoResults(res.results);
+      setGeoNote(res.mode === "demo" ? (res.note ?? "Search unavailable in demo mode") : res.results.length ? null : "No match");
+    } catch (e) {
+      setGeoNote((e as Error).message);
+    }
+  }
+
+  async function toggleVoice() {
+    if (recording) {
+      recorder.current?.stop();
+      return;
+    }
+    setSttNote(null);
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      const mime = ["audio/webm;codecs=opus", "audio/ogg;codecs=opus"].find((m) => MediaRecorder.isTypeSupported(m));
+      if (!mime) {
+        stream.getTracks().forEach((tr) => tr.stop());
+        setSttNote("This browser cannot record Opus audio; please type instead.");
+        return;
+      }
+      const rec = new MediaRecorder(stream, { mimeType: mime });
+      const chunks: Blob[] = [];
+      rec.ondataavailable = (e) => chunks.push(e.data);
+      rec.onstop = async () => {
+        stream.getTracks().forEach((tr) => tr.stop());
+        setRecording(false);
+        const form = new FormData();
+        form.append("audio", new Blob(chunks, { type: mime.split(";")[0] }), "note");
+        form.append("language", lang);
+        setSttNote("Transcribing…");
+        try {
+          const res = await apiPostForm<{ mode: string; transcript: string; note?: string }>("/api/speech-to-text", form);
+          if (res.transcript) setDescription((d) => (d ? `${d} ${res.transcript}` : res.transcript));
+          setSttNote(
+            res.mode === "real"
+              ? res.transcript
+                ? "Transcribed with Cloud Speech-to-Text"
+                : "No speech recognised; please try again"
+              : (res.note ?? "Speech-to-Text unavailable"),
+          );
+        } catch (e) {
+          setSttNote((e as Error).message);
+        }
+      };
+      recorder.current = rec;
+      rec.start();
+      setRecording(true);
+      setTimeout(() => rec.state === "recording" && rec.stop(), 55000);
+    } catch {
+      setSttNote("Microphone permission denied; please type instead.");
+    }
   }
 
   async function submit() {
@@ -291,6 +361,43 @@ export function CitizenApp() {
           <Button size="sm" variant="ghost" onClick={locateMe}>
             {t("useMyLocation", lang)}
           </Button>
+          <form
+            className="flex w-full gap-2"
+            onSubmit={(e) => {
+              e.preventDefault();
+              void searchPlace();
+            }}
+          >
+            <input
+              aria-label={t("searchPlace", lang)}
+              placeholder={t("searchPlace", lang)}
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              className="h-8 min-w-0 flex-1 rounded-lg border bg-background px-2 text-sm"
+            />
+            <Button size="sm" variant="outline" type="submit">
+              {t("search", lang)}
+            </Button>
+          </form>
+          {geoNote && <p className="w-full text-xs text-muted-foreground">{geoNote}</p>}
+          {geoResults.length > 0 && (
+            <ul className="w-full space-y-1 text-sm">
+              {geoResults.map((g) => (
+                <li key={`${g.lat},${g.lon}`}>
+                  <button
+                    type="button"
+                    className="text-left underline-offset-2 hover:underline"
+                    onClick={() => {
+                      setPlace({ label: g.locality ?? g.formatted_address, lat: g.lat, lon: g.lon });
+                      setGeoResults([]);
+                    }}
+                  >
+                    {g.formatted_address}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
         </CardContent>
       </Card>
 
@@ -342,7 +449,13 @@ export function CitizenApp() {
             <div className="flex flex-wrap items-center gap-2 text-xs">
               <span className="text-muted-foreground">{t("orSample", lang)}</span>
               {samples.map((s) => (
-                <button key={s.name} type="button" onClick={() => pickSample(s)} className="overflow-hidden rounded border">
+                <button
+                  key={s.name}
+                  type="button"
+                  onClick={() => pickSample(s)}
+                  className="overflow-hidden rounded border"
+                  title={s.attribution ? `Sample photo: ${s.attribution}` : s.name}
+                >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={`${API_URL}${s.url}`} alt={s.name} className="h-12 w-16 object-cover" />
                 </button>
@@ -353,7 +466,18 @@ export function CitizenApp() {
             // eslint-disable-next-line @next/next/no-img-element
             <img src={preview} alt="Selected" className="max-h-60 rounded-lg border object-contain" />
           )}
+          {samples.length > 0 && (
+            <p className="text-[10px] text-muted-foreground">
+              Sample photos: Wikimedia Commons (CC BY-SA), not taken at the demo locations. Hover for credits.
+            </p>
+          )}
           <Textarea placeholder={t("describe", lang)} value={description} onChange={(e) => setDescription(e.target.value)} />
+          <div className="flex items-center gap-2 text-xs">
+            <Button size="sm" variant={recording ? "destructive" : "outline"} type="button" onClick={toggleVoice}>
+              {recording ? t("stopVoice", lang) : t("recordVoice", lang)}
+            </Button>
+            {sttNote && <span className="text-muted-foreground">{sttNote}</span>}
+          </div>
           <Button disabled={!file || busy} onClick={submit} className="w-full">
             {busy ? t("submitting", lang) : t("submit", lang)}
           </Button>
@@ -376,6 +500,11 @@ export function CitizenApp() {
           </CardHeader>
           <CardContent className="space-y-2 text-sm">
             {result.note && <p>{result.note}</p>}
+            {result.address && (
+              <p className="text-xs text-muted-foreground">
+                📍 {result.address.formatted_address} ({result.address.source})
+              </p>
+            )}
             {v && (
               <>
                 <p>

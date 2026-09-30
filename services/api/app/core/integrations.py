@@ -30,12 +30,15 @@ class Integration:
 def _configured() -> dict[str, bool]:
     s = settings
     gcp = bool(s.google_cloud_project)
+    cloud_ai = bool(s.google_cloud_api_key) or gcp  # API key, or ADC on the project
     return {
         "gemini": bool(s.gemini_api_key) or (s.google_genai_use_vertexai and gcp),
         "earth_engine": bool(s.earth_engine_project),
         "cpcb": bool(s.data_gov_in_api_key),
-        "translation": gcp,
-        "text_to_speech": gcp,
+        "translation": cloud_ai,
+        "text_to_speech": cloud_ai,
+        "speech_to_text": cloud_ai,
+        "maps": bool(s.maps_api_key),
         "bigquery": gcp and bool(s.bigquery_dataset),
         "firestore": bool(s.firebase_project_id),
         "cloud_storage": bool(s.gcs_bucket),
@@ -52,10 +55,17 @@ _REGISTRY: dict[str, Integration] = {
                                 "Cached sample satellite + weather extracts in data/sample/<state>/"),
     "cpcb": Integration("cpcb", "CPCB real-time AQ via data.gov.in", ["DATA_GOV_IN_API_KEY"],
                         "Sample official station readings in data/sample/<state>/official_stations.json"),
-    "translation": Integration("translation", "Cloud Translation", ["GOOGLE_CLOUD_PROJECT", "ADC credentials"],
+    "translation": Integration("translation", "Cloud Translation",
+                               ["GOOGLE_CLOUD_API_KEY", "or GOOGLE_CLOUD_PROJECT + ADC"],
                                "Gemini translation if Gemini is live, else pre-written template translations"),
-    "text_to_speech": Integration("text_to_speech", "Cloud Text-to-Speech", ["GOOGLE_CLOUD_PROJECT", "ADC credentials"],
+    "text_to_speech": Integration("text_to_speech", "Cloud Text-to-Speech",
+                                  ["GOOGLE_CLOUD_API_KEY", "or GOOGLE_CLOUD_PROJECT + ADC"],
                                   "Browser speechSynthesis voice in the citizen app"),
+    "speech_to_text": Integration("speech_to_text", "Cloud Speech-to-Text (citizen voice notes)",
+                                  ["GOOGLE_CLOUD_API_KEY", "or GOOGLE_CLOUD_PROJECT + ADC"],
+                                  "Voice notes disabled; citizens type the description"),
+    "maps": Integration("maps", "Google Maps Geocoding (report address, locality search)", ["MAPS_API_KEY"],
+                        "Pilot-area name only; no address lookup or locality search"),
     "bigquery": Integration("bigquery", "BigQuery (analytics mirror)", ["GOOGLE_CLOUD_PROJECT", "BIGQUERY_DATASET"],
                             "Local JSON store in services/api/.localdata"),
     "firestore": Integration("firestore", "Firestore (operational mirror)", ["FIREBASE_PROJECT_ID"],

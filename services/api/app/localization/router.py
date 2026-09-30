@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, File, Form, HTTPException, UploadFile
 from pydantic import BaseModel, Field
 
 from app.core import integrations
@@ -54,10 +54,14 @@ def translate(body: TranslateIn):
         raise HTTPException(422, f"supported targets: {sorted(LANGUAGE_NAMES)}")
     if integrations.enabled("translation"):
         try:
-            from app.localization.google_cloud import translate_texts
+            from app.localization.google_cloud import (
+                translate_texts,
+                translation_engine,
+            )
 
-            return {"mode": "real", "engine": "cloud_translation_v3",
-                    "translations": translate_texts(body.texts, body.target, body.source)}
+            out = translate_texts(body.texts, body.target, body.source)
+            integrations.clear_error("translation")
+            return {"mode": "real", "engine": translation_engine(), "translations": out}
         except Exception as exc:  # noqa: BLE001
             integrations.record_fallback("translation", exc)
     return {"mode": "demo", "engine": "none",
@@ -72,9 +76,30 @@ def tts(body: TtsIn):
         try:
             from app.localization.google_cloud import synthesize
 
+            audio = synthesize(body.text, body.language)
+            integrations.clear_error("text_to_speech")
             return {"mode": "real", "engine": "cloud_text_to_speech", "mime_type": "audio/mpeg",
-                    "audio_base64": synthesize(body.text, body.language), "locale": locale}
+                    "audio_base64": audio, "locale": locale}
         except Exception as exc:  # noqa: BLE001
             integrations.record_fallback("text_to_speech", exc)
     return {"mode": "demo", "engine": "browser_speech_synthesis", "locale": locale, "text": body.text,
             "note": "Cloud Text-to-Speech not configured: play with the browser's built-in voice."}
+
+
+@router.post("/speech-to-text")
+async def stt(audio: UploadFile = File(...), language: str = Form("hi")):
+    """Citizen voice note -> text for the report description (Cloud Speech-to-Text)."""
+    data = await audio.read()
+    if len(data) > 5 * 1024 * 1024:
+        raise HTTPException(413, "voice note larger than 5 MB (keep it under a minute)")
+    if integrations.enabled("speech_to_text"):
+        try:
+            from app.localization.google_cloud import transcribe
+
+            out = transcribe(data, language, audio.content_type or "audio/webm")
+            integrations.clear_error("speech_to_text")
+            return {"mode": "real", "engine": "cloud_speech_to_text", **out}
+        except Exception as exc:  # noqa: BLE001
+            integrations.record_fallback("speech_to_text", exc)
+    return {"mode": "demo", "engine": "none", "transcript": "", "language_code": None, "confidence": None,
+            "note": "Speech-to-Text not configured: please type the description."}

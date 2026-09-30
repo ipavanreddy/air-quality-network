@@ -17,7 +17,7 @@ def save_photo(report_id: str, data: bytes, mime: str) -> str:
         try:
             from google.cloud import storage
 
-            blob = storage.Client().bucket(settings.gcs_bucket).blob(f"reports/{report_id}.{EXT.get(mime, 'bin')}")
+            blob = storage.Client().bucket(settings.gcs_bucket).blob(f"air-quality-network/reports/{report_id}.{EXT.get(mime, 'bin')}")
             blob.upload_from_string(data, content_type=mime)
             integrations.clear_error("cloud_storage")
             return f"gs://{settings.gcs_bucket}/{blob.name}"

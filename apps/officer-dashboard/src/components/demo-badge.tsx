@@ -28,31 +28,36 @@ export function DemoBadge() {
 
   if (error) return <Badge variant="destructive">API unreachable</Badge>;
   if (!status) return <Badge variant="outline">Checking API…</Badge>;
-  const demo = status.demo_mode || !MAPS_KEY;
+  const all = [
+    ...status.integrations,
+    {
+      name: "maps_js",
+      label: "Google Maps JavaScript API (basemap)",
+      mode: MAPS_KEY ? "real" : "demo",
+      env_vars: ["NEXT_PUBLIC_MAPS_API_KEY"],
+      demo_behaviour: "Leaflet + OpenStreetMap tiles",
+      last_error: null,
+    },
+  ];
+  const live = all.filter((i) => i.mode === "real").length;
   return (
     <div className="relative">
       <button type="button" onClick={() => setOpen((o) => !o)} aria-expanded={open}>
-        {demo ? (
-          <Badge className="bg-amber-500 text-black">Demo mode · sample data</Badge>
-        ) : (
+        {live === all.length ? (
           <Badge className="bg-emerald-600 text-white">Live integrations</Badge>
+        ) : live > 0 ? (
+          <Badge className="bg-amber-500 text-black">
+            {live}/{all.length} live · rest sample data
+          </Badge>
+        ) : (
+          <Badge className="bg-amber-500 text-black">Demo mode · sample data</Badge>
         )}
       </button>
       {open && (
         <div className="absolute right-0 z-[1000] mt-2 w-96 rounded-lg border bg-background p-3 text-xs shadow-lg">
           <p className="mb-2 font-medium">Integrations (Gemini model: {status.gemini_model})</p>
           <ul className="space-y-1.5">
-            {[
-              ...status.integrations,
-              {
-                name: "maps",
-                label: "Google Maps (basemap)",
-                mode: MAPS_KEY ? "real" : "demo",
-                env_vars: ["NEXT_PUBLIC_MAPS_API_KEY"],
-                demo_behaviour: "Leaflet + OpenStreetMap tiles",
-                last_error: null,
-              },
-            ].map((i) => (
+            {all.map((i) => (
               <li key={i.name} className="flex items-start justify-between gap-2">
                 <span>
                   {i.label}

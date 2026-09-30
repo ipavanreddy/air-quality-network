@@ -1,0 +1,33 @@
+{
+ "note": "Real photographs from Wikimedia Commons used as sample citizen photos. Resized to max 640 px and re-encoded as JPEG (modification). They are NOT photos of the demo locations: the demo attaches them to sample coordinates in Delhi NCR, Punjab and Maharashtra.",
+ "photos": {
+  "industrial_chimney_smoke.jpg": {
+   "title": "Smoke factory - panoramio - Alireza Shakernia.jpg",
+   "author": "Alireza Shakernia",
+   "license": "CC BY-SA 3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Smoke_factory_-_panoramio_-_Alireza_Shakernia.jpg"
+  },
+  "crop_burning_field.jpg": {
+   "title": "NP India burning 8 (6314802183).jpg",
+   "author": "Neil Palmer (CIAT)",
+   "license": "CC BY-SA 2.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+   "source_url": "https://commons.wikimedia.org/wiki/File:NP_India_burning_8_(6314802183).jpg"
+  },
+  "construction_dust_site.jpg": {
+   "title": "Another beam bites the dust - geograph.org.uk - 279756.jpg",
+   "author": "Walter Baxter",
+   "license": "CC BY-SA 2.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Another_beam_bites_the_dust_-_geograph.org.uk_-_279756.jpg"
+  },
+  "clear_sky_park.jpg": {
+   "title": "Blue sky in highlands park.jpg",
+   "author": "MaxixKatana",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Blue_sky_in_highlands_park.jpg"
+  }
+ }
+}

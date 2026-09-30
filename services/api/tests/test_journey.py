@@ -9,7 +9,7 @@ DELHI = {"lat": "28.628", "lon": "77.295"}
 
 def submit(client, photo: str, where: dict, **extra):
     data = (PHOTOS / photo).read_bytes()
-    res = client.post("/api/reports", files={"photo": (photo, data, "image/png")},
+    res = client.post("/api/reports", files={"photo": (photo, data, "image/jpeg")},
                       data={**where, "language": "hi", "reporter_id": "citizen-123", **extra})
     assert res.status_code == 200, res.text
     return res.json()
@@ -22,7 +22,7 @@ def test_core_journey_delhi(fresh):
     assert c.get("/api/alerts?jurisdiction=DL-DPCC").json() == []
 
     # 1. Citizen photo -> AI verification (fixture in demo mode)
-    report = submit(c, "industrial_smoke_night.png", DELHI, description="Black smoke from chimney at 3am")
+    report = submit(c, "industrial_chimney_smoke.jpg", DELHI, description="Black smoke from chimney at 3am")
     v = report["verification"]
     assert report["status"] == "verified"
     assert v["is_pollution_event"] and v["source_type"] == "industrial_emission" and v["observed_indicators"]
@@ -68,7 +68,7 @@ def test_core_journey_delhi(fresh):
 
 
 def test_irrelevant_photo_is_flagged_and_does_not_raise_confidence(fresh):
-    r = submit(fresh, "clear_sky_park.png", DELHI)
+    r = submit(fresh, "clear_sky_park.jpg", DELHI)
     assert r["status"] == "rejected" and r["verification"]["is_pollution_event"] is False
     assert r["impact"]["cell_confidence_after"] == r["impact"]["cell_confidence_before"]
     assert r["impact"]["alert_id"] is None

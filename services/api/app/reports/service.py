@@ -8,6 +8,7 @@ from app.ai import services as ai
 from app.config import settings
 from app.core.engine import H3_RES, Engine, iso_now
 from app.core.samples import load, now
+from app.geo import maps
 from app.interop.adapters import configs, get_config
 from app.reports.storage import save_photo
 
@@ -16,9 +17,9 @@ SCENARIO_SOURCE = {"delhi-ncr": "industrial_emission", "punjab": "crop_residue_b
 
 # Pre-existing SAMPLE reports so Punjab + Maharashtra have live hotspots when the demo starts.
 SEED_REPORTS = [
-    {"state": "punjab", "photo": "crop_burning_field.png", "offset": (0.0, 0.0), "minutes_ago": 40,
+    {"state": "punjab", "photo": "crop_burning_field.jpg", "offset": (0.0, 0.0), "minutes_ago": 40,
      "description": "Stubble fire next to the village road, lots of smoke (sample report)", "language": "pa"},
-    {"state": "maharashtra", "photo": "construction_dust_site.png", "offset": (0.0, 0.0), "minutes_ago": 55,
+    {"state": "maharashtra", "photo": "construction_dust_site.jpg", "offset": (0.0, 0.0), "minutes_ago": 55,
      "description": "Dust cloud from building site, no water sprinkling (sample report)", "language": "en"},
 ]
 
@@ -45,6 +46,7 @@ def create_report(engine: Engine, *, photo: bytes, mime_type: str, lat: float, l
         "photo_url": photo_url,
         "photo_endpoint": f"/api/reports/{report_id}/photo",
         "location": {"lat": lat, "lon": lon},
+        "address": None if sample_seed else maps.reverse(lat, lon),
         "h3_cell": cell,
         "state": cfg.id if cfg else None,
         "jurisdiction_id": cfg.jurisdiction.id if cfg else None,
@@ -107,7 +109,7 @@ def seed_samples(engine: Engine) -> None:
         cfg = get_config(seed["state"])
         photo = (settings.sample_data_dir / "photos" / seed["photo"]).read_bytes()
         assert any(f["file"] == seed["photo"] for f in fixtures.values())
-        r = create_report(engine, photo=photo, mime_type="image/png", lat=cfg.center[0] + seed["offset"][0],
+        r = create_report(engine, photo=photo, mime_type="image/jpeg", lat=cfg.center[0] + seed["offset"][0],
                           lon=cfg.center[1] + seed["offset"][1], description=seed["description"],
                           language=seed["language"], reporter_id="sample-seed", sample_seed=True,
                           created_at=(now() - timedelta(minutes=seed["minutes_ago"])).isoformat())

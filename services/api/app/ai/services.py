@@ -237,13 +237,16 @@ def translate_advisory(adv: HealthAdvisory, lang: str, context: dict, base_mode:
         return payload, {"engine": "source", "mode": "real" if base_mode == "gemini" else "demo"}
     if integrations.enabled("translation"):
         try:
-            from app.localization.google_cloud import translate_texts
+            from app.localization.google_cloud import (
+                translate_texts,
+                translation_engine,
+            )
 
             texts = [payload["headline"], payload["summary"], payload["sensitive_groups"], *payload["protective_steps"]]
             out = translate_texts(texts, lang)
             integrations.clear_error("translation")
             return ({"headline": out[0], "summary": out[1], "sensitive_groups": out[2],
-                     "protective_steps": out[3:]}, {"engine": "cloud_translation_v3", "mode": "real"})
+                     "protective_steps": out[3:]}, {"engine": translation_engine(), "mode": "real"})
         except Exception as exc:  # noqa: BLE001
             integrations.record_fallback("translation", exc)
     if integrations.enabled("gemini") and base_mode == "gemini":

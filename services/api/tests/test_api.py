@@ -82,8 +82,8 @@ def test_translate_and_tts_demo(client):
 def test_report_outside_pilot_area(fresh):
     from app.config import settings
 
-    photo = (settings.sample_data_dir / "photos" / "industrial_smoke_night.png").read_bytes()
-    r = fresh.post("/api/reports", files={"photo": ("p.png", photo, "image/png")},
+    photo = (settings.sample_data_dir / "photos" / "industrial_chimney_smoke.jpg").read_bytes()
+    r = fresh.post("/api/reports", files={"photo": ("p.jpg", photo, "image/jpeg")},
                    data={"lat": "12.97", "lon": "77.59"}).json()
     assert r["status"] == "outside_pilot_area"
     assert fresh.get(f"/api/reports/{r['report_id']}").status_code == 200
@@ -98,3 +98,21 @@ def test_locate_and_sample_photos(client):
     assert len(photos) == 4
     assert client.get(photos[0]["url"]).status_code == 200
     assert client.get("/api/samples/photos/..%2F..%2Fsecret").status_code == 404
+
+
+def test_voice_and_location_fall_back_in_demo_mode(client):
+    stt = client.post("/api/speech-to-text", files={"audio": ("n.webm", b"\x1a\x45\xdf\xa3" * 64, "audio/webm")},
+                      data={"language": "hi"}).json()
+    assert stt["mode"] == "demo" and stt["transcript"] == ""
+    geo = client.get("/api/geocode?q=Patparganj").json()
+    assert geo["mode"] == "demo" and geo["results"] == []
+    assert client.get("/api/geocode/reverse?lat=28.6&lon=77.3").json() == {"mode": "demo", "result": None}
+    names = {i["name"] for i in client.get("/api/config").json()["integrations"]}
+    assert {"speech_to_text", "maps"} <= names
+
+
+def test_sample_photos_carry_attribution(client):
+    photos = client.get("/api/samples/photos").json()
+    assert len(photos) == 4
+    assert all("Wikimedia Commons" in p["attribution"] and p["source_url"] for p in photos)
+    assert client.get(photos[0]["url"]).headers["content-type"] == "image/jpeg"

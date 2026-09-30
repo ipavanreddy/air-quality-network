@@ -16,8 +16,6 @@ import hashlib
 import json
 import math
 import random
-import struct
-import zlib
 from datetime import datetime, timedelta
 from pathlib import Path
 
@@ -251,106 +249,40 @@ def gen_history(state: str, sc: dict, rng: random.Random) -> list:
     return hist
 
 
-# --- tiny PNG writer for sample citizen photos ---------------------------------------------
-def write_png(path: Path, w: int, h: int, pixel) -> str:
-    rows = bytearray()
-    for y in range(h):
-        rows.append(0)
-        for x in range(w):
-            rows.extend(pixel(x, y))
-    raw = bytes(rows)
-
-    def chunk(tag: bytes, data: bytes) -> bytes:
-        return struct.pack(">I", len(data)) + tag + data + struct.pack(">I", zlib.crc32(tag + data) & 0xFFFFFFFF)
-
-    png = b"\x89PNG\r\n\x1a\n" + chunk(b"IHDR", struct.pack(">IIBBBBB", w, h, 8, 2, 0, 0, 0))
-    png += chunk(b"IDAT", zlib.compress(raw, 9)) + chunk(b"IEND", b"")
-    path.write_bytes(png)
-    return hashlib.sha256(png).hexdigest()
-
-
-def blend(a, b, t):
-    return tuple(int(a[i] + (b[i] - a[i]) * t) for i in range(3))
-
-
-def smoke(x, y, cx, cy, r):
-    d = math.hypot(x - cx, (y - cy) * 1.3)
-    return max(0.0, 1 - d / r)
-
-
-def photo_industrial(x, y):
-    c = blend((10, 14, 40), (40, 40, 60), y / 240)
-    if y > 170 or (40 < x < 140 and y > 120) or (180 < x < 280 and y > 135):
-        c = (35, 35, 38)
-    if 100 < x < 116 and y > 50:
-        c = (70, 60, 55)
-    if (60 < x < 70 or 220 < x < 230) and 150 < y < 160:
-        c = (240, 200, 90)  # lit windows
-    s = max(smoke(x, y, 108 + (50 - y) * 0.6, y, 60) if y < 60 else 0, smoke(x, y, 150, 30, 90))
-    return blend(c, (150, 150, 150), min(1, s * 1.2))
-
-
-def photo_crop(x, y):
-    c = blend((180, 170, 160), (205, 190, 170), y / 120)
-    if y > 140:
-        c = (200, 170, 70) if (x // 6) % 2 == 0 else (160, 130, 50)  # stubble rows
-    if 130 < y < 160 and (math.sin(x / 7) * 8 + 145) < y:
-        c = (250, 110 + (x * 7) % 60, 20)  # flames
-    s = smoke(x, y, 160 + (140 - y) * 0.5, 80, 120) if y < 140 else 0
-    return blend(c, (120, 115, 110), min(1, s * 1.1))
-
-
-def photo_dust(x, y):
-    c = blend((215, 200, 170), (200, 180, 150), y / 240)
-    if 180 < y:
-        c = (170, 140, 100)
-    if 60 < x < 200 and 60 < y < 180 and ((x - 60) % 28 < 4 or (y - 60) % 24 < 4):
-        c = (110, 110, 115)  # building frame
-    if 240 < x < 246 and 30 < y < 180 or (180 < x < 300 and 30 < y < 36):
-        c = (230, 180, 40)  # crane
-    s = smoke(x, y, 110, 175, 140)
-    return blend(c, (210, 190, 160), min(0.9, s))
-
-
-def photo_clear(x, y):
-    c = blend((90, 160, 235), (170, 210, 245), y / 150)
-    if y > 150:
-        c = (70, 150, 70)
-    if math.hypot(x - 260, y - 40) < 18:
-        c = (255, 240, 150)
-    return c
-
-
+# --- sample citizen photos ----------------------------------------------------------------
+# Real CC-licensed photographs from Wikimedia Commons (see data/sample/photos/ATTRIBUTION.json and
+# THIRD_PARTY.md). They are committed, not generated; this script only fingerprints them so demo mode
+# can return a stored verification for each sample photo.
 PHOTOS = {
-    "industrial_smoke_night.png": (photo_industrial, "industrial_emission"),
-    "crop_burning_field.png": (photo_crop, "crop_residue_burning"),
-    "construction_dust_site.png": (photo_dust, "construction_dust"),
-    "clear_sky_park.png": (photo_clear, "irrelevant"),
+    "industrial_chimney_smoke.jpg": "industrial_emission",
+    "crop_burning_field.jpg": "crop_residue_burning",
+    "construction_dust_site.jpg": "construction_dust",
+    "clear_sky_park.jpg": "irrelevant",
 }
 
 VERIFICATIONS = {
     "industrial_emission": {
         "is_pollution_event": True, "source_type": "industrial_emission", "visual_severity": 4,
-        "observed_indicators": ["dark smoke plume from a stack", "night-time emission",
-                                "industrial structures"],
+        "observed_indicators": ["dense smoke plume from a tall stack", "continuous emission",
+                                "industrial chimney"],
         "confidence": 0.86, "image_quality_ok": True, "requires_human_review": False,
-        "explanation": "Dense smoke rising from a chimney in an industrial setting at night.",
+        "explanation": "A dense smoke plume is rising from an industrial chimney.",
     },
     "crop_residue_burning": {
         "is_pollution_event": True, "source_type": "crop_residue_burning", "visual_severity": 4,
-        "observed_indicators": ["open flames", "dense grey smoke", "stubble rows"],
+        "observed_indicators": ["dense smoke over a harvested field", "burning stubble", "low visibility"],
         "confidence": 0.87, "image_quality_ok": True, "requires_human_review": False,
-        "explanation": "Open flames along harvested stubble rows with a large smoke plume.",
+        "explanation": "Thick smoke from burning crop residue over a harvested field.",
     },
     "construction_dust": {
         "is_pollution_event": True, "source_type": "construction_dust", "visual_severity": 3,
-        "observed_indicators": ["visible dust cloud", "uncovered construction site", "building frame"],
+        "observed_indicators": ["visible dust cloud", "excavator demolishing a structure", "no water spraying"],
         "confidence": 0.82, "image_quality_ok": True, "requires_human_review": False,
-        "explanation": "Dust haze over an active construction site with no visible covering or sprinkling.",
+        "explanation": "A dust cloud from demolition work with no visible dust suppression.",
     },
     "irrelevant": {
         "is_pollution_event": False, "source_type": "other_unknown", "visual_severity": 0,
-        "observed_indicators": ["clear sky", "green vegetation"],
+        "observed_indicators": ["clear blue sky", "green vegetation"],
         "confidence": 0.93, "image_quality_ok": True, "requires_human_review": False,
         "explanation": "No smoke, dust or haze visible; image does not show a pollution event.",
     },
@@ -406,14 +338,13 @@ def main() -> None:
             "records": gen_history(state, sc, rng)})
 
     photos_dir = OUT / "photos"
-    photos_dir.mkdir(exist_ok=True)
     fixtures = {}
-    for name, (fn, kind) in PHOTOS.items():
-        sha = write_png(photos_dir / name, 320, 240, fn)
+    for name, kind in PHOTOS.items():
+        sha = hashlib.sha256((photos_dir / name).read_bytes()).hexdigest()
         fixtures[sha] = {"file": name, "verification": VERIFICATIONS[kind]}
     dump("ai_fixtures/photo_verification.json", {
         "metadata": meta("all demo states", "Fixture Gemini photo-verification outputs for the "
-                         "generated sample photos (demo mode only)"),
+                         "CC-licensed sample photos (demo mode only; live mode sends them to Gemini)"),
         "by_sha256": fixtures,
         "default_by_source": VERIFICATIONS,
     })
