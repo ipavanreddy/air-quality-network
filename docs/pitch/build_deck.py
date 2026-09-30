@@ -234,7 +234,7 @@ s = new_slide()
 header(s, "What the live demo shows (5 minutes)", "Demo", None)
 rows = [
     ("0:30", "Citizen report", "Hindi voice note → Speech-to-Text; Gemini: industrial emission, severity 4/5, ~90 %"),
-    ("1:10", "Evidence fusion", "Hotspot Confidence 66 → ~84 (threshold 70): sensor 35 · satellite 25 · citizen 25 · weather 15"),
+    ("1:10", "Evidence fusion", "Hotspot Confidence 66 → about 80 (threshold 70): sensor 35 · satellite 25 · citizen 25 · weather 15"),
     ("1:50", "Action brief", "Likely source + evidence with source/time + recommended inspection + uncertainties"),
     ("2:30", "Forecast", "Now / +24 / +48 / +72 h slider, range and drivers, model vs persistence"),
     ("3:00", "Officer action", "Alert in ≤ 5 s → acknowledge & approve → record action → close; audit trail"),

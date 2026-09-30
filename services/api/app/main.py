@@ -1,3 +1,5 @@
+import logging
+import threading
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
@@ -16,9 +18,21 @@ from app.reports.service import seed_samples
 from app.sensors_calibration.router import router as sensors_router
 
 
+def _seed() -> None:
+    try:
+        seed_samples(get_engine())
+    except Exception:  # noqa: BLE001
+        logging.exception("seeding sample reports failed")
+
+
 @asynccontextmanager
 async def lifespan(_: FastAPI):
-    seed_samples(get_engine())
+    if integrations.enabled("gemini"):
+        # Live Gemini makes seeding take ~30-60 s; seed in the background so the port opens at once
+        # (Cloud Run startup probe) and the health check answers while sample hotspots are prepared.
+        threading.Thread(target=_seed, name="seed-samples", daemon=True).start()
+    else:
+        _seed()
     yield
 
 
