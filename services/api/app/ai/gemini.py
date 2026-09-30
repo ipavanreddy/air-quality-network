@@ -58,6 +58,7 @@ def generate_structured[T: BaseModel](
         config=types.GenerateContentConfig(
             response_mime_type="application/json",
             response_schema=schema,
+            temperature=0.1,  # low: verification and briefs should be repeatable for the same evidence
         ),
     )
     result = schema.model_validate_json(response.text)

@@ -180,15 +180,17 @@ def _template_brief(bundle: dict, rules: list[dict]) -> ActionBrief:
 
 
 def action_brief(bundle: dict, rules: list[dict], jurisdiction_name: str) -> tuple[ActionBrief, dict]:
-    pv = "action_brief_v1"
+    pv = "action_brief_v2"
     if integrations.enabled("gemini"):
         try:
-            brief, prov = _gemini("action_brief", "v1", {
+            brief, prov = _gemini("action_brief", "v2", {
                 "bundle_json": json.dumps(bundle, indent=1, default=str),
                 "rules_json": json.dumps(rules, indent=1),
                 "jurisdiction_name": jurisdiction_name,
             }, ActionBrief)
             warnings = enforce_rules(brief, rules) + grounding_warnings(brief, bundle)
+            if "likely" not in brief.summary.lower():
+                warnings.append("Summary does not use 'likely' attribution wording (FR-06)")
             prov["validation_warnings"] = warnings
             return brief, prov
         except Exception as exc:  # noqa: BLE001
