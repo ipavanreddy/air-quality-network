@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { Grid, GridCell, Report } from "@/lib/types";
 
 const MAPS_KEY = process.env.NEXT_PUBLIC_MAPS_API_KEY ?? "";
@@ -253,10 +253,18 @@ function GoogleMap(props: Props) {
 
 export function HexMap(props: Props) {
   const w = props.grid.weather;
+  // If the key is rejected (e.g. the domain is not in its HTTP-referrer allow-list), Google calls
+  // window.gm_authFailure; fall back to Leaflet + OSM instead of showing a broken map.
+  const [googleFailed, setGoogleFailed] = useState(false);
+  useEffect(() => {
+    if (!MAPS_KEY) return;
+    (window as unknown as { gm_authFailure?: () => void }).gm_authFailure = () => setGoogleFailed(true);
+  }, []);
+  const useGoogle = !!MAPS_KEY && !googleFailed;
   const windTo = (w.wind_dir_deg + 180) % 360;
   return (
     <div className="relative h-full w-full overflow-hidden rounded-lg border">
-      {MAPS_KEY ? <GoogleMap {...props} /> : <LeafletMap {...props} />}
+      {useGoogle ? <GoogleMap {...props} /> : <LeafletMap {...props} />}
       <div className="pointer-events-none absolute top-2 right-2 z-[500] rounded-md bg-background/90 px-2 py-1 text-xs shadow">
         <div className="flex items-center gap-2">
           <span className="inline-block text-lg leading-none" style={{ transform: `rotate(${windTo}deg)` }} aria-hidden>
@@ -273,7 +281,11 @@ export function HexMap(props: Props) {
         <span className="mr-2 inline-block size-2 rounded-full bg-blue-700" /> sensor
         <span className="mr-2 ml-3 inline-block size-2 rounded-full bg-purple-600" /> citizen report
         <span className="ml-3">▭ bold outline = hotspot</span>
-        {!MAPS_KEY && <span className="ml-3 text-muted-foreground">Basemap: OpenStreetMap (Leaflet fallback)</span>}
+        {!useGoogle && (
+          <span className="ml-3 text-muted-foreground">
+            Basemap: OpenStreetMap (Leaflet fallback{googleFailed ? ": Maps key rejected for this domain" : ""})
+          </span>
+        )}
       </div>
     </div>
   );

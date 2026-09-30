@@ -1,0 +1,15 @@
+# Build context for services/api/Dockerfile is the repo root: send only what the image needs.
+*
+!services/api/pyproject.toml
+!services/api/uv.lock
+!services/api/.python-version
+!services/api/app/**
+!ai/prompts/**
+!ai/schemas/**
+!data/adapters/**
+!data/schemas/**
+!data/sample/**
+**/__pycache__
+**/*.pyc
+**/.env
+**/.env.*

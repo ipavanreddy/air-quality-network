@@ -1,0 +1,5 @@
+# Settings used when this app is installed on its own (e.g. Vercel with this folder as the root).
+# In the monorepo the root pnpm-workspace.yaml applies.
+allowBuilds:
+  sharp: false
+  unrs-resolver: false
