@@ -8,7 +8,7 @@ One canonical schema and per-state adapters let Delhi NCR, Punjab and Maharashtr
 other cross-boundary alerts.
 
 Build with AI (Google) hackathon, Track 2 · Full spec: [docs/PRD.md](docs/PRD.md) · Submission pack:
-[docs/SUBMISSION.md](docs/SUBMISSION.md) · Pitch deck: [docs/pitch/](docs/pitch/)
+[docs/SUBMISSION.md](docs/SUBMISSION.md) · Pitch deck: [docs/pitch/VayuDrishti_Spontom_Pitch.pptx](docs/pitch/VayuDrishti_Spontom_Pitch.pptx) ([PDF](docs/pitch/VayuDrishti_Spontom_Pitch.pdf))
 
 ## Live prototype
 

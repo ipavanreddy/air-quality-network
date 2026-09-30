@@ -94,7 +94,10 @@ Sample citizen photos in `data/sample/photos/` are real photographs from Wikimed
 
 | Name | Licence | Source URL | Used for |
 |---|---|---|---|
-| python-pptx | MIT | https://github.com/scanny/python-pptx | Generates `docs/pitch/VayuDrishti_pitch.pptx` |
+| PptxGenJS 4.0.1 | MIT | https://github.com/gitbrent/PptxGenJS | Generates `docs/pitch/VayuDrishti_Spontom_Pitch.pptx` via the Spontom deck kit (`docs/pitch/deck-kit.js`) |
+| LibreOffice (headless) | MPL-2.0 | https://www.libreoffice.org | PDF export of the deck |
+
+Deck images (`docs/pitch/assets/`) are screenshots of the VayuDrishti apps running locally on labelled sample data. The map screenshots include OpenStreetMap tiles (© OpenStreetMap contributors, ODbL) and a CC BY-SA sample photo credited above. No AI-generated images are used (Imagen was not available to the project).
 
 ## Generated / sample data (not third-party)
 
