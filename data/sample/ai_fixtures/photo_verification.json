@@ -1,0 +1,138 @@
+{
+ "by_sha256": {
+  "27148619109fe5876f2806527da7d7b242bb602cb27c27d06667771fa3f41535": {
+   "file": "clear_sky_park.png",
+   "verification": {
+    "confidence": 0.93,
+    "explanation": "No smoke, dust or haze visible; image does not show a pollution event.",
+    "image_quality_ok": true,
+    "is_pollution_event": false,
+    "observed_indicators": [
+     "clear sky",
+     "green vegetation"
+    ],
+    "requires_human_review": false,
+    "source_type": "other_unknown",
+    "visual_severity": 0
+   }
+  },
+  "4bbacbef1c13da02ba62609fe339d39cba493f4989c8140163f4771982ac4f7a": {
+   "file": "industrial_smoke_night.png",
+   "verification": {
+    "confidence": 0.86,
+    "explanation": "Dense smoke rising from a chimney in an industrial setting at night.",
+    "image_quality_ok": true,
+    "is_pollution_event": true,
+    "observed_indicators": [
+     "dark smoke plume from a stack",
+     "night-time emission",
+     "industrial structures"
+    ],
+    "requires_human_review": false,
+    "source_type": "industrial_emission",
+    "visual_severity": 4
+   }
+  },
+  "4c63544dcbae6ea4602d8574e12f6e21096ef5a13902b3a762b4f0aebdfbd269": {
+   "file": "crop_burning_field.png",
+   "verification": {
+    "confidence": 0.87,
+    "explanation": "Open flames along harvested stubble rows with a large smoke plume.",
+    "image_quality_ok": true,
+    "is_pollution_event": true,
+    "observed_indicators": [
+     "open flames",
+     "dense grey smoke",
+     "stubble rows"
+    ],
+    "requires_human_review": false,
+    "source_type": "crop_residue_burning",
+    "visual_severity": 4
+   }
+  },
+  "a7816c1d1b40de28eb50acd3a27ca16a5b88b1bdd449450672c2016a0c77e559": {
+   "file": "construction_dust_site.png",
+   "verification": {
+    "confidence": 0.82,
+    "explanation": "Dust haze over an active construction site with no visible covering or sprinkling.",
+    "image_quality_ok": true,
+    "is_pollution_event": true,
+    "observed_indicators": [
+     "visible dust cloud",
+     "uncovered construction site",
+     "building frame"
+    ],
+    "requires_human_review": false,
+    "source_type": "construction_dust",
+    "visual_severity": 3
+   }
+  }
+ },
+ "default_by_source": {
+  "construction_dust": {
+   "confidence": 0.82,
+   "explanation": "Dust haze over an active construction site with no visible covering or sprinkling.",
+   "image_quality_ok": true,
+   "is_pollution_event": true,
+   "observed_indicators": [
+    "visible dust cloud",
+    "uncovered construction site",
+    "building frame"
+   ],
+   "requires_human_review": false,
+   "source_type": "construction_dust",
+   "visual_severity": 3
+  },
+  "crop_residue_burning": {
+   "confidence": 0.87,
+   "explanation": "Open flames along harvested stubble rows with a large smoke plume.",
+   "image_quality_ok": true,
+   "is_pollution_event": true,
+   "observed_indicators": [
+    "open flames",
+    "dense grey smoke",
+    "stubble rows"
+   ],
+   "requires_human_review": false,
+   "source_type": "crop_residue_burning",
+   "visual_severity": 4
+  },
+  "industrial_emission": {
+   "confidence": 0.86,
+   "explanation": "Dense smoke rising from a chimney in an industrial setting at night.",
+   "image_quality_ok": true,
+   "is_pollution_event": true,
+   "observed_indicators": [
+    "dark smoke plume from a stack",
+    "night-time emission",
+    "industrial structures"
+   ],
+   "requires_human_review": false,
+   "source_type": "industrial_emission",
+   "visual_severity": 4
+  },
+  "irrelevant": {
+   "confidence": 0.93,
+   "explanation": "No smoke, dust or haze visible; image does not show a pollution event.",
+   "image_quality_ok": true,
+   "is_pollution_event": false,
+   "observed_indicators": [
+    "clear sky",
+    "green vegetation"
+   ],
+   "requires_human_review": false,
+   "source_type": "other_unknown",
+   "visual_severity": 0
+  }
+ },
+ "metadata": {
+  "dataset_version": "sample-2026.11-v1",
+  "generator": "data/generate_sample.py",
+  "geographic_scope": "all demo states",
+  "is_sample": true,
+  "is_synthetic": true,
+  "notes": "",
+  "reference_timestamp": "2026-11-05T03:00:00+05:30",
+  "source": "Fixture Gemini photo-verification outputs for the generated sample photos (demo mode only)"
+ }
+}

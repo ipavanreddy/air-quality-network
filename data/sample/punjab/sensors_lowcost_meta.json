@@ -1,0 +1,94 @@
+{
+ "metadata": {
+  "dataset_version": "sample-2026.11-v1",
+  "generator": "data/generate_sample.py",
+  "geographic_scope": "Punjab - Sangrur district village cluster (sample)",
+  "is_sample": true,
+  "is_synthetic": true,
+  "notes": "",
+  "reference_timestamp": "2026-11-05T03:00:00+05:30",
+  "source": "Simulated low-cost community sensor registry"
+ },
+ "records": [
+  {
+   "installed_at": "2026-08-01T00:00:00+05:30",
+   "is_simulated": true,
+   "lat": 30.24723,
+   "lon": 75.84485,
+   "owner": "Community network (simulated)",
+   "sensor_id": "PB-LC-01",
+   "state": "punjab",
+   "type": "low_cost"
+  },
+  {
+   "installed_at": "2026-08-01T00:00:00+05:30",
+   "is_simulated": true,
+   "lat": 30.25337,
+   "lon": 75.83909,
+   "owner": "Community network (simulated)",
+   "sensor_id": "PB-LC-02",
+   "state": "punjab",
+   "type": "low_cost"
+  },
+  {
+   "installed_at": "2026-08-01T00:00:00+05:30",
+   "is_simulated": true,
+   "lat": 30.23924,
+   "lon": 75.83975,
+   "owner": "Community network (simulated)",
+   "sensor_id": "PB-LC-03",
+   "state": "punjab",
+   "type": "low_cost"
+  },
+  {
+   "installed_at": "2026-08-01T00:00:00+05:30",
+   "is_simulated": true,
+   "lat": 30.23983,
+   "lon": 75.84965,
+   "owner": "Community network (simulated)",
+   "sensor_id": "PB-LC-04",
+   "state": "punjab",
+   "type": "low_cost"
+  },
+  {
+   "installed_at": "2026-08-01T00:00:00+05:30",
+   "is_simulated": true,
+   "lat": 30.22298,
+   "lon": 75.83124,
+   "owner": "Community network (simulated)",
+   "sensor_id": "PB-LC-05",
+   "state": "punjab",
+   "type": "low_cost"
+  },
+  {
+   "installed_at": "2026-08-01T00:00:00+05:30",
+   "is_simulated": true,
+   "lat": 30.2527,
+   "lon": 75.82737,
+   "owner": "Community network (simulated)",
+   "sensor_id": "PB-LC-06",
+   "state": "punjab",
+   "type": "low_cost"
+  },
+  {
+   "installed_at": "2026-08-01T00:00:00+05:30",
+   "is_simulated": true,
+   "lat": 30.26826,
+   "lon": 75.84627,
+   "owner": "Community network (simulated)",
+   "sensor_id": "PB-LC-07",
+   "state": "punjab",
+   "type": "low_cost"
+  },
+  {
+   "installed_at": "2026-08-01T00:00:00+05:30",
+   "is_simulated": true,
+   "lat": 30.26036,
+   "lon": 75.82145,
+   "owner": "Community network (simulated)",
+   "sensor_id": "PB-LC-08",
+   "state": "punjab",
+   "type": "low_cost"
+  }
+ ]
+}

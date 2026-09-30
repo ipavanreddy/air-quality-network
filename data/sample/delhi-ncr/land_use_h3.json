@@ -1,0 +1,199 @@
+{
+ "metadata": {
+  "dataset_version": "sample-2026.11-v1",
+  "generator": "data/generate_sample.py",
+  "geographic_scope": "Delhi NCR - East Delhi industrial + traffic corridor (sample)",
+  "is_sample": true,
+  "is_synthetic": true,
+  "notes": "",
+  "reference_timestamp": "2026-11-05T03:00:00+05:30",
+  "source": "Synthetic demo land-use labels per H3 cell"
+ },
+ "records": [
+  {
+   "h3_cell": "883da11481fffff",
+   "land_use": "industrial",
+   "state": "delhi-ncr"
+  },
+  {
+   "h3_cell": "883da11483fffff",
+   "land_use": "major_road",
+   "state": "delhi-ncr"
+  },
+  {
+   "h3_cell": "883da11485fffff",
+   "land_use": "residential",
+   "state": "delhi-ncr"
+  },
+  {
+   "h3_cell": "883da11487fffff",
+   "land_use": "residential",
+   "state": "delhi-ncr"
+  },
+  {
+   "h3_cell": "883da11489fffff",
+   "land_use": "industrial",
+   "state": "delhi-ncr"
+  },
+  {
+   "h3_cell": "883da1148bfffff",
+   "land_use": "residential",
+   "state": "delhi-ncr"
+  },
+  {
+   "h3_cell": "883da1148dfffff",
+   "land_use": "industrial",
+   "state": "delhi-ncr"
+  },
+  {
+   "h3_cell": "883da11491fffff",
+   "land_use": "residential",
+   "state": "delhi-ncr"
+  },
+  {
+   "h3_cell": "883da11495fffff",
+   "land_use": "major_road",
+   "state": "delhi-ncr"
+  },
+  {
+   "h3_cell": "883da11497fffff",
+   "land_use": "major_road",
+   "state": "delhi-ncr"
+  },
+  {
+   "h3_cell": "883da11499fffff",
+   "land_use": "residential",
+   "state": "delhi-ncr"
+  },
+  {
+   "h3_cell": "883da1149dfffff",
+   "land_use": "residential",
+   "state": "delhi-ncr"
+  },
+  {
+   "h3_cell": "883da114a1fffff",
+   "land_use": "residential",
+   "state": "delhi-ncr"
+  },
+  {
+   "h3_cell": "883da114a3fffff",
+   "land_use": "residential",
+   "state": "delhi-ncr"
+  },
+  {
+   "h3_cell": "883da114a9fffff",
+   "land_use": "residential",
+   "state": "delhi-ncr"
+  },
+  {
+   "h3_cell": "883da114abfffff",
+   "land_use": "residential",
+   "state": "delhi-ncr"
+  },
+  {
+   "h3_cell": "883da114adfffff",
+   "land_use": "residential",
+   "state": "delhi-ncr"
+  },
+  {
+   "h3_cell": "883da114b1fffff",
+   "land_use": "residential",
+   "state": "delhi-ncr"
+  },
+  {
+   "h3_cell": "883da114b5fffff",
+   "land_use": "residential",
+   "state": "delhi-ncr"
+  },
+  {
+   "h3_cell": "883da114b9fffff",
+   "land_use": "major_road",
+   "state": "delhi-ncr"
+  },
+  {
+   "h3_cell": "883da114bbfffff",
+   "land_use": "major_road",
+   "state": "delhi-ncr"
+  },
+  {
+   "h3_cell": "883da114bdfffff",
+   "land_use": "residential",
+   "state": "delhi-ncr"
+  },
+  {
+   "h3_cell": "883da114c1fffff",
+   "land_use": "residential",
+   "state": "delhi-ncr"
+  },
+  {
+   "h3_cell": "883da114c3fffff",
+   "land_use": "industrial",
+   "state": "delhi-ncr"
+  },
+  {
+   "h3_cell": "883da114c5fffff",
+   "land_use": "residential",
+   "state": "delhi-ncr"
+  },
+  {
+   "h3_cell": "883da114c7fffff",
+   "land_use": "industrial",
+   "state": "delhi-ncr"
+  },
+  {
+   "h3_cell": "883da114cbfffff",
+   "land_use": "residential",
+   "state": "delhi-ncr"
+  },
+  {
+   "h3_cell": "883da114d1fffff",
+   "land_use": "residential",
+   "state": "delhi-ncr"
+  },
+  {
+   "h3_cell": "883da114d3fffff",
+   "land_use": "residential",
+   "state": "delhi-ncr"
+  },
+  {
+   "h3_cell": "883da114d5fffff",
+   "land_use": "residential",
+   "state": "delhi-ncr"
+  },
+  {
+   "h3_cell": "883da114d7fffff",
+   "land_use": "residential",
+   "state": "delhi-ncr"
+  },
+  {
+   "h3_cell": "883da114ddfffff",
+   "land_use": "residential",
+   "state": "delhi-ncr"
+  },
+  {
+   "h3_cell": "883da114e1fffff",
+   "land_use": "residential",
+   "state": "delhi-ncr"
+  },
+  {
+   "h3_cell": "883da114e3fffff",
+   "land_use": "residential",
+   "state": "delhi-ncr"
+  },
+  {
+   "h3_cell": "883da114e7fffff",
+   "land_use": "residential",
+   "state": "delhi-ncr"
+  },
+  {
+   "h3_cell": "883da114e9fffff",
+   "land_use": "residential",
+   "state": "delhi-ncr"
+  },
+  {
+   "h3_cell": "883da114ebfffff",
+   "land_use": "industrial",
+   "state": "delhi-ncr"
+  }
+ ]
+}

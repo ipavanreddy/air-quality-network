@@ -1,0 +1,94 @@
+{
+ "metadata": {
+  "dataset_version": "sample-2026.11-v1",
+  "generator": "data/generate_sample.py",
+  "geographic_scope": "Delhi NCR - East Delhi industrial + traffic corridor (sample)",
+  "is_sample": true,
+  "is_synthetic": true,
+  "notes": "",
+  "reference_timestamp": "2026-11-05T03:00:00+05:30",
+  "source": "Simulated low-cost community sensor registry"
+ },
+ "records": [
+  {
+   "installed_at": "2026-08-01T00:00:00+05:30",
+   "is_simulated": true,
+   "lat": 28.62995,
+   "lon": 77.28976,
+   "owner": "Community network (simulated)",
+   "sensor_id": "DL-LC-01",
+   "state": "delhi-ncr",
+   "type": "low_cost"
+  },
+  {
+   "installed_at": "2026-08-01T00:00:00+05:30",
+   "is_simulated": true,
+   "lat": 28.62182,
+   "lon": 77.29692,
+   "owner": "Community network (simulated)",
+   "sensor_id": "DL-LC-02",
+   "state": "delhi-ncr",
+   "type": "low_cost"
+  },
+  {
+   "installed_at": "2026-08-01T00:00:00+05:30",
+   "is_simulated": true,
+   "lat": 28.63716,
+   "lon": 77.29492,
+   "owner": "Community network (simulated)",
+   "sensor_id": "DL-LC-03",
+   "state": "delhi-ncr",
+   "type": "low_cost"
+  },
+  {
+   "installed_at": "2026-08-01T00:00:00+05:30",
+   "is_simulated": true,
+   "lat": 28.63564,
+   "lon": 77.28537,
+   "owner": "Community network (simulated)",
+   "sensor_id": "DL-LC-04",
+   "state": "delhi-ncr",
+   "type": "low_cost"
+  },
+  {
+   "installed_at": "2026-08-01T00:00:00+05:30",
+   "is_simulated": true,
+   "lat": 28.65113,
+   "lon": 77.28331,
+   "owner": "Community network (simulated)",
+   "sensor_id": "DL-LC-05",
+   "state": "delhi-ncr",
+   "type": "low_cost"
+  },
+  {
+   "installed_at": "2026-08-01T00:00:00+05:30",
+   "is_simulated": true,
+   "lat": 28.64338,
+   "lon": 77.28049,
+   "owner": "Community network (simulated)",
+   "sensor_id": "DL-LC-06",
+   "state": "delhi-ncr",
+   "type": "low_cost"
+  },
+  {
+   "installed_at": "2026-08-01T00:00:00+05:30",
+   "is_simulated": true,
+   "lat": 28.63504,
+   "lon": 77.2648,
+   "owner": "Community network (simulated)",
+   "sensor_id": "DL-LC-07",
+   "state": "delhi-ncr",
+   "type": "low_cost"
+  },
+  {
+   "installed_at": "2026-08-01T00:00:00+05:30",
+   "is_simulated": true,
+   "lat": 28.61514,
+   "lon": 77.3023,
+   "owner": "Community network (simulated)",
+   "sensor_id": "DL-LC-08",
+   "state": "delhi-ncr",
+   "type": "low_cost"
+  }
+ ]
+}

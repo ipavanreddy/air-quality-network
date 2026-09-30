@@ -1,0 +1,13 @@
+{
+  "name": "air-quality-network",
+  "private": true,
+  "scripts": {
+    "dev:citizen-web": "pnpm --filter citizen-web dev",
+    "dev:officer-dashboard": "pnpm --filter officer-dashboard dev",
+    "dev:api": "cd services/api && uv run uvicorn app.main:app --reload --port 8020",
+    "build": "pnpm -r build",
+    "lint": "pnpm -r lint",
+    "test:api": "cd services/api && uv run pytest -q"
+  },
+  "packageManager": "pnpm@11.13.0"
+}

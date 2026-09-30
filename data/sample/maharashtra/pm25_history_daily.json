@@ -1,0 +1,734 @@
+{
+ "metadata": {
+  "dataset_version": "sample-2026.11-v1",
+  "generator": "data/generate_sample.py",
+  "geographic_scope": "Maharashtra - Mumbai-Pune corridor, Panvel (sample)",
+  "is_sample": true,
+  "is_synthetic": true,
+  "notes": "",
+  "reference_timestamp": "2026-11-05T03:00:00+05:30",
+  "source": "Simulated 90-day daily corridor PM2.5 + drivers for forecast training/backtest"
+ },
+ "records": [
+  {
+   "date": "2026-08-07",
+   "fire_count": 0,
+   "pm25": 57.2,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 1611.0
+  },
+  {
+   "date": "2026-08-08",
+   "fire_count": 0,
+   "pm25": 62.9,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 1406.0
+  },
+  {
+   "date": "2026-08-09",
+   "fire_count": 0,
+   "pm25": 79.5,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 1353.0
+  },
+  {
+   "date": "2026-08-10",
+   "fire_count": 0,
+   "pm25": 94.0,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 1767.0
+  },
+  {
+   "date": "2026-08-11",
+   "fire_count": 0,
+   "pm25": 113.4,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 955.0
+  },
+  {
+   "date": "2026-08-12",
+   "fire_count": 0,
+   "pm25": 91.4,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 1703.0
+  },
+  {
+   "date": "2026-08-13",
+   "fire_count": 0,
+   "pm25": 85.3,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 1423.0
+  },
+  {
+   "date": "2026-08-14",
+   "fire_count": 0,
+   "pm25": 57.6,
+   "rain": true,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 1428.0
+  },
+  {
+   "date": "2026-08-15",
+   "fire_count": 0,
+   "pm25": 70.7,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 1695.0
+  },
+  {
+   "date": "2026-08-16",
+   "fire_count": 0,
+   "pm25": 106.7,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 1158.0
+  },
+  {
+   "date": "2026-08-17",
+   "fire_count": 0,
+   "pm25": 105.4,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 1310.0
+  },
+  {
+   "date": "2026-08-18",
+   "fire_count": 0,
+   "pm25": 103.4,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 1189.0
+  },
+  {
+   "date": "2026-08-19",
+   "fire_count": 0,
+   "pm25": 97.3,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 1387.0
+  },
+  {
+   "date": "2026-08-20",
+   "fire_count": 0,
+   "pm25": 90.2,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 1230.0
+  },
+  {
+   "date": "2026-08-21",
+   "fire_count": 0,
+   "pm25": 113.4,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 1245.0
+  },
+  {
+   "date": "2026-08-22",
+   "fire_count": 0,
+   "pm25": 96.9,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 1023.0
+  },
+  {
+   "date": "2026-08-23",
+   "fire_count": 0,
+   "pm25": 95.8,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 1401.0
+  },
+  {
+   "date": "2026-08-24",
+   "fire_count": 0,
+   "pm25": 124.7,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 956.0
+  },
+  {
+   "date": "2026-08-25",
+   "fire_count": 0,
+   "pm25": 106.5,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 1347.0
+  },
+  {
+   "date": "2026-08-26",
+   "fire_count": 0,
+   "pm25": 113.1,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 849.0
+  },
+  {
+   "date": "2026-08-27",
+   "fire_count": 0,
+   "pm25": 117.3,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 857.0
+  },
+  {
+   "date": "2026-08-28",
+   "fire_count": 0,
+   "pm25": 102.8,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 1846.0
+  },
+  {
+   "date": "2026-08-29",
+   "fire_count": 0,
+   "pm25": 96.9,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 1207.0
+  },
+  {
+   "date": "2026-08-30",
+   "fire_count": 0,
+   "pm25": 93.1,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 1405.0
+  },
+  {
+   "date": "2026-08-31",
+   "fire_count": 0,
+   "pm25": 90.1,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 1496.0
+  },
+  {
+   "date": "2026-09-01",
+   "fire_count": 0,
+   "pm25": 113.7,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 1043.0
+  },
+  {
+   "date": "2026-09-02",
+   "fire_count": 0,
+   "pm25": 140.7,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 776.0
+  },
+  {
+   "date": "2026-09-03",
+   "fire_count": 0,
+   "pm25": 125.4,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 1415.0
+  },
+  {
+   "date": "2026-09-04",
+   "fire_count": 0,
+   "pm25": 121.5,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 1150.0
+  },
+  {
+   "date": "2026-09-05",
+   "fire_count": 0,
+   "pm25": 129.3,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 1064.0
+  },
+  {
+   "date": "2026-09-06",
+   "fire_count": 0,
+   "pm25": 113.2,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 1175.0
+  },
+  {
+   "date": "2026-09-07",
+   "fire_count": 0,
+   "pm25": 130.8,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 721.0
+  },
+  {
+   "date": "2026-09-08",
+   "fire_count": 0,
+   "pm25": 131.7,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 1125.0
+  },
+  {
+   "date": "2026-09-09",
+   "fire_count": 0,
+   "pm25": 134.1,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 1023.0
+  },
+  {
+   "date": "2026-09-10",
+   "fire_count": 0,
+   "pm25": 130.2,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 889.0
+  },
+  {
+   "date": "2026-09-11",
+   "fire_count": 0,
+   "pm25": 122.2,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 1201.0
+  },
+  {
+   "date": "2026-09-12",
+   "fire_count": 0,
+   "pm25": 121.5,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 784.0
+  },
+  {
+   "date": "2026-09-13",
+   "fire_count": 0,
+   "pm25": 137.6,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 950.0
+  },
+  {
+   "date": "2026-09-14",
+   "fire_count": 0,
+   "pm25": 123.9,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 1281.0
+  },
+  {
+   "date": "2026-09-15",
+   "fire_count": 0,
+   "pm25": 119.5,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 1270.0
+  },
+  {
+   "date": "2026-09-16",
+   "fire_count": 0,
+   "pm25": 129.1,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 888.0
+  },
+  {
+   "date": "2026-09-17",
+   "fire_count": 0,
+   "pm25": 127.9,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 1137.0
+  },
+  {
+   "date": "2026-09-18",
+   "fire_count": 0,
+   "pm25": 128.5,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 1173.0
+  },
+  {
+   "date": "2026-09-19",
+   "fire_count": 0,
+   "pm25": 133.2,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 826.0
+  },
+  {
+   "date": "2026-09-20",
+   "fire_count": 0,
+   "pm25": 142.5,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 639.0
+  },
+  {
+   "date": "2026-09-21",
+   "fire_count": 0,
+   "pm25": 138.8,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 953.0
+  },
+  {
+   "date": "2026-09-22",
+   "fire_count": 0,
+   "pm25": 125.7,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 1023.0
+  },
+  {
+   "date": "2026-09-23",
+   "fire_count": 0,
+   "pm25": 119.1,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 1343.0
+  },
+  {
+   "date": "2026-09-24",
+   "fire_count": 0,
+   "pm25": 108.5,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 1051.0
+  },
+  {
+   "date": "2026-09-25",
+   "fire_count": 0,
+   "pm25": 109.0,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 1195.0
+  },
+  {
+   "date": "2026-09-26",
+   "fire_count": 0,
+   "pm25": 114.0,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 1002.0
+  },
+  {
+   "date": "2026-09-27",
+   "fire_count": 0,
+   "pm25": 135.4,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 603.0
+  },
+  {
+   "date": "2026-09-28",
+   "fire_count": 0,
+   "pm25": 97.2,
+   "rain": true,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 843.0
+  },
+  {
+   "date": "2026-09-29",
+   "fire_count": 0,
+   "pm25": 113.9,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 687.0
+  },
+  {
+   "date": "2026-09-30",
+   "fire_count": 0,
+   "pm25": 129.9,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 705.0
+  },
+  {
+   "date": "2026-10-01",
+   "fire_count": 0,
+   "pm25": 142.8,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 1072.0
+  },
+  {
+   "date": "2026-10-02",
+   "fire_count": 0,
+   "pm25": 129.0,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 820.0
+  },
+  {
+   "date": "2026-10-03",
+   "fire_count": 0,
+   "pm25": 141.0,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 601.0
+  },
+  {
+   "date": "2026-10-04",
+   "fire_count": 0,
+   "pm25": 124.3,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 1366.0
+  },
+  {
+   "date": "2026-10-05",
+   "fire_count": 0,
+   "pm25": 135.7,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 720.0
+  },
+  {
+   "date": "2026-10-06",
+   "fire_count": 0,
+   "pm25": 121.0,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 1140.0
+  },
+  {
+   "date": "2026-10-07",
+   "fire_count": 0,
+   "pm25": 130.9,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 915.0
+  },
+  {
+   "date": "2026-10-08",
+   "fire_count": 0,
+   "pm25": 152.2,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 662.0
+  },
+  {
+   "date": "2026-10-09",
+   "fire_count": 0,
+   "pm25": 145.0,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 857.0
+  },
+  {
+   "date": "2026-10-10",
+   "fire_count": 0,
+   "pm25": 154.7,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 701.0
+  },
+  {
+   "date": "2026-10-11",
+   "fire_count": 0,
+   "pm25": 151.1,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 947.0
+  },
+  {
+   "date": "2026-10-12",
+   "fire_count": 0,
+   "pm25": 162.6,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 763.0
+  },
+  {
+   "date": "2026-10-13",
+   "fire_count": 0,
+   "pm25": 152.2,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 728.0
+  },
+  {
+   "date": "2026-10-14",
+   "fire_count": 0,
+   "pm25": 158.6,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 483.0
+  },
+  {
+   "date": "2026-10-15",
+   "fire_count": 0,
+   "pm25": 145.7,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 1060.0
+  },
+  {
+   "date": "2026-10-16",
+   "fire_count": 0,
+   "pm25": 160.9,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 561.0
+  },
+  {
+   "date": "2026-10-17",
+   "fire_count": 0,
+   "pm25": 147.3,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 956.0
+  },
+  {
+   "date": "2026-10-18",
+   "fire_count": 0,
+   "pm25": 157.9,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 285.0
+  },
+  {
+   "date": "2026-10-19",
+   "fire_count": 0,
+   "pm25": 137.4,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 1230.0
+  },
+  {
+   "date": "2026-10-20",
+   "fire_count": 0,
+   "pm25": 149.4,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 614.0
+  },
+  {
+   "date": "2026-10-21",
+   "fire_count": 0,
+   "pm25": 133.3,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 709.0
+  },
+  {
+   "date": "2026-10-22",
+   "fire_count": 0,
+   "pm25": 131.4,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 1068.0
+  },
+  {
+   "date": "2026-10-23",
+   "fire_count": 0,
+   "pm25": 148.1,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 341.0
+  },
+  {
+   "date": "2026-10-24",
+   "fire_count": 0,
+   "pm25": 155.6,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 425.0
+  },
+  {
+   "date": "2026-10-25",
+   "fire_count": 0,
+   "pm25": 170.2,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 386.0
+  },
+  {
+   "date": "2026-10-26",
+   "fire_count": 0,
+   "pm25": 150.2,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 1082.0
+  },
+  {
+   "date": "2026-10-27",
+   "fire_count": 0,
+   "pm25": 154.9,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 851.0
+  },
+  {
+   "date": "2026-10-28",
+   "fire_count": 0,
+   "pm25": 176.1,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 150.0
+  },
+  {
+   "date": "2026-10-29",
+   "fire_count": 0,
+   "pm25": 174.0,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 571.0
+  },
+  {
+   "date": "2026-10-30",
+   "fire_count": 0,
+   "pm25": 152.7,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 1010.0
+  },
+  {
+   "date": "2026-10-31",
+   "fire_count": 0,
+   "pm25": 146.8,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 574.0
+  },
+  {
+   "date": "2026-11-01",
+   "fire_count": 0,
+   "pm25": 155.7,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 383.0
+  },
+  {
+   "date": "2026-11-02",
+   "fire_count": 0,
+   "pm25": 151.0,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 659.0
+  },
+  {
+   "date": "2026-11-03",
+   "fire_count": 0,
+   "pm25": 162.9,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 1027.0
+  },
+  {
+   "date": "2026-11-04",
+   "fire_count": 0,
+   "pm25": 173.4,
+   "rain": false,
+   "state": "maharashtra",
+   "ventilation_index_m2s": 571.0
+  }
+ ]
+}

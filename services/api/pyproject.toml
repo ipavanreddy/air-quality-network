@@ -1,0 +1,26 @@
+[project]
+name = "air-quality-network-api"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "earthengine-api>=1.7.46",
+    "fastapi>=0.142.2",
+    "firebase-admin>=7.7.0",
+    "google-cloud-bigquery>=3.45.2",
+    "google-cloud-storage>=3.15.1",
+    "google-genai>=2.25.0",
+    "h3>=4.5.0",
+    "httpx>=0.28.1",
+    "pydantic-settings>=2.15.0",
+    "python-multipart>=0.0.32",
+    "uvicorn[standard]>=0.54.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "ruff>=0.16.9",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]

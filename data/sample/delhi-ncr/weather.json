@@ -1,0 +1,47 @@
+{
+ "current": {
+  "boundary_layer_m": 220,
+  "humidity": 78,
+  "observed_at": "2026-11-05T02:30:00+05:30",
+  "rain_mm": 0.0,
+  "source": "ERA5-Land reanalysis (sample extract)",
+  "state": "delhi-ncr",
+  "temperature_c": 12.0,
+  "wind_dir_deg": 290,
+  "wind_speed_ms": 1.1
+ },
+ "forecast": {
+  "issued_at": "2026-11-05T00:00:00+05:30",
+  "source": "NOAA GFS 0.25 (sample extract)",
+  "steps": [
+   {
+    "fire_count_upwind_forecast": 5,
+    "horizon_hours": 24,
+    "rain_mm": 0,
+    "ventilation_index_m2s": 240
+   },
+   {
+    "fire_count_upwind_forecast": 9,
+    "horizon_hours": 48,
+    "rain_mm": 0,
+    "ventilation_index_m2s": 210
+   },
+   {
+    "fire_count_upwind_forecast": 6,
+    "horizon_hours": 72,
+    "rain_mm": 0.5,
+    "ventilation_index_m2s": 380
+   }
+  ]
+ },
+ "metadata": {
+  "dataset_version": "sample-2026.11-v1",
+  "generator": "data/generate_sample.py",
+  "geographic_scope": "Delhi NCR - East Delhi industrial + traffic corridor (sample)",
+  "is_sample": true,
+  "is_synthetic": true,
+  "notes": "",
+  "reference_timestamp": "2026-11-05T03:00:00+05:30",
+  "source": "Sample weather shaped like ERA5-Land (current) and GFS (72h forecast) output"
+ }
+}

@@ -1,0 +1,228 @@
+{
+  "$defs": {
+    "HotspotRef": {
+      "properties": {
+        "confidence": {
+          "title": "Confidence",
+          "type": "number"
+        },
+        "likely_source": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Likely Source"
+        }
+      },
+      "required": [
+        "confidence",
+        "likely_source"
+      ],
+      "title": "HotspotRef",
+      "type": "object"
+    },
+    "Observations": {
+      "properties": {
+        "pm25_calibrated": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Pm25 Calibrated"
+        },
+        "pm25_source": {
+          "anyOf": [
+            {
+              "enum": [
+                "low_cost_sensor",
+                "official_station"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Pm25 Source"
+        },
+        "pm10": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Pm10"
+        },
+        "no2_column_anomaly_pct": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "No2 Column Anomaly Pct"
+        },
+        "fire_count_upwind_100km": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Fire Count Upwind 100Km"
+        },
+        "aod": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Aod"
+        }
+      },
+      "required": [
+        "pm25_calibrated",
+        "pm25_source",
+        "pm10",
+        "no2_column_anomaly_pct",
+        "fire_count_upwind_100km",
+        "aod"
+      ],
+      "title": "Observations",
+      "type": "object"
+    },
+    "Weather": {
+      "properties": {
+        "wind_speed_ms": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Wind Speed Ms"
+        },
+        "wind_dir_deg": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Wind Dir Deg"
+        },
+        "humidity": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Humidity"
+        },
+        "boundary_layer_m": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Boundary Layer M"
+        }
+      },
+      "required": [
+        "wind_speed_ms",
+        "wind_dir_deg",
+        "humidity",
+        "boundary_layer_m"
+      ],
+      "title": "Weather",
+      "type": "object"
+    }
+  },
+  "description": "Canonical air-quality grid cell (PRD \u00a721). Returned by GET /api/cells/{id}.",
+  "properties": {
+    "state": {
+      "title": "State",
+      "type": "string"
+    },
+    "city": {
+      "title": "City",
+      "type": "string"
+    },
+    "cell_id": {
+      "title": "Cell Id",
+      "type": "string"
+    },
+    "timestamp": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Timestamp"
+    },
+    "observations": {
+      "$ref": "#/$defs/Observations"
+    },
+    "weather": {
+      "$ref": "#/$defs/Weather"
+    },
+    "citizen_reports": {
+      "title": "Citizen Reports",
+      "type": "integer"
+    },
+    "hotspot": {
+      "$ref": "#/$defs/HotspotRef"
+    },
+    "forecast": {
+      "additionalProperties": {
+        "type": "number"
+      },
+      "title": "Forecast",
+      "type": "object"
+    }
+  },
+  "required": [
+    "state",
+    "city",
+    "cell_id",
+    "timestamp",
+    "observations",
+    "weather",
+    "citizen_reports",
+    "hotspot",
+    "forecast"
+  ],
+  "title": "GridCellSnapshot",
+  "type": "object"
+}

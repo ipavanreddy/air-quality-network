@@ -1,0 +1,94 @@
+{
+ "metadata": {
+  "dataset_version": "sample-2026.11-v1",
+  "generator": "data/generate_sample.py",
+  "geographic_scope": "Maharashtra - Mumbai-Pune corridor, Panvel (sample)",
+  "is_sample": true,
+  "is_synthetic": true,
+  "notes": "",
+  "reference_timestamp": "2026-11-05T03:00:00+05:30",
+  "source": "Simulated low-cost community sensor registry"
+ },
+ "records": [
+  {
+   "installed_at": "2026-08-01T00:00:00+05:30",
+   "is_simulated": true,
+   "lat": 18.98886,
+   "lon": 73.11896,
+   "owner": "Community network (simulated)",
+   "sensor_id": "MH-LC-01",
+   "state": "maharashtra",
+   "type": "low_cost"
+  },
+  {
+   "installed_at": "2026-08-01T00:00:00+05:30",
+   "is_simulated": true,
+   "lat": 18.99587,
+   "lon": 73.12211,
+   "owner": "Community network (simulated)",
+   "sensor_id": "MH-LC-02",
+   "state": "maharashtra",
+   "type": "low_cost"
+  },
+  {
+   "installed_at": "2026-08-01T00:00:00+05:30",
+   "is_simulated": true,
+   "lat": 18.9882,
+   "lon": 73.12691,
+   "owner": "Community network (simulated)",
+   "sensor_id": "MH-LC-03",
+   "state": "maharashtra",
+   "type": "low_cost"
+  },
+  {
+   "installed_at": "2026-08-01T00:00:00+05:30",
+   "is_simulated": true,
+   "lat": 18.99437,
+   "lon": 73.11482,
+   "owner": "Community network (simulated)",
+   "sensor_id": "MH-LC-04",
+   "state": "maharashtra",
+   "type": "low_cost"
+  },
+  {
+   "installed_at": "2026-08-01T00:00:00+05:30",
+   "is_simulated": true,
+   "lat": 18.9905,
+   "lon": 73.14224,
+   "owner": "Community network (simulated)",
+   "sensor_id": "MH-LC-05",
+   "state": "maharashtra",
+   "type": "low_cost"
+  },
+  {
+   "installed_at": "2026-08-01T00:00:00+05:30",
+   "is_simulated": true,
+   "lat": 18.97471,
+   "lon": 73.13405,
+   "owner": "Community network (simulated)",
+   "sensor_id": "MH-LC-06",
+   "state": "maharashtra",
+   "type": "low_cost"
+  },
+  {
+   "installed_at": "2026-08-01T00:00:00+05:30",
+   "is_simulated": true,
+   "lat": 19.0093,
+   "lon": 73.10631,
+   "owner": "Community network (simulated)",
+   "sensor_id": "MH-LC-07",
+   "state": "maharashtra",
+   "type": "low_cost"
+  },
+  {
+   "installed_at": "2026-08-01T00:00:00+05:30",
+   "is_simulated": true,
+   "lat": 18.97407,
+   "lon": 73.1189,
+   "owner": "Community network (simulated)",
+   "sensor_id": "MH-LC-08",
+   "state": "maharashtra",
+   "type": "low_cost"
+  }
+ ]
+}

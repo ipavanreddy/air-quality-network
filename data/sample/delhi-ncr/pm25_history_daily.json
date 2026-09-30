@@ -1,0 +1,734 @@
+{
+ "metadata": {
+  "dataset_version": "sample-2026.11-v1",
+  "generator": "data/generate_sample.py",
+  "geographic_scope": "Delhi NCR - East Delhi industrial + traffic corridor (sample)",
+  "is_sample": true,
+  "is_synthetic": true,
+  "notes": "",
+  "reference_timestamp": "2026-11-05T03:00:00+05:30",
+  "source": "Simulated 90-day daily corridor PM2.5 + drivers for forecast training/backtest"
+ },
+ "records": [
+  {
+   "date": "2026-08-07",
+   "fire_count": 0,
+   "pm25": 126.9,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 1711.0
+  },
+  {
+   "date": "2026-08-08",
+   "fire_count": 7,
+   "pm25": 156.6,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 1348.0
+  },
+  {
+   "date": "2026-08-09",
+   "fire_count": 15,
+   "pm25": 190.5,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 1233.0
+  },
+  {
+   "date": "2026-08-10",
+   "fire_count": 16,
+   "pm25": 198.0,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 1416.0
+  },
+  {
+   "date": "2026-08-11",
+   "fire_count": 5,
+   "pm25": 179.3,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 1528.0
+  },
+  {
+   "date": "2026-08-12",
+   "fire_count": 0,
+   "pm25": 165.1,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 1326.0
+  },
+  {
+   "date": "2026-08-13",
+   "fire_count": 18,
+   "pm25": 204.8,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 1271.0
+  },
+  {
+   "date": "2026-08-14",
+   "fire_count": 0,
+   "pm25": 183.1,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 1414.0
+  },
+  {
+   "date": "2026-08-15",
+   "fire_count": 16,
+   "pm25": 190.9,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 1469.0
+  },
+  {
+   "date": "2026-08-16",
+   "fire_count": 7,
+   "pm25": 189.7,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 1513.0
+  },
+  {
+   "date": "2026-08-17",
+   "fire_count": 14,
+   "pm25": 206.3,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 1247.0
+  },
+  {
+   "date": "2026-08-18",
+   "fire_count": 10,
+   "pm25": 192.1,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 1647.0
+  },
+  {
+   "date": "2026-08-19",
+   "fire_count": 6,
+   "pm25": 187.8,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 1488.0
+  },
+  {
+   "date": "2026-08-20",
+   "fire_count": 0,
+   "pm25": 173.7,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 1165.0
+  },
+  {
+   "date": "2026-08-21",
+   "fire_count": 18,
+   "pm25": 218.9,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 839.0
+  },
+  {
+   "date": "2026-08-22",
+   "fire_count": 21,
+   "pm25": 259.2,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 1153.0
+  },
+  {
+   "date": "2026-08-23",
+   "fire_count": 14,
+   "pm25": 222.1,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 1433.0
+  },
+  {
+   "date": "2026-08-24",
+   "fire_count": 11,
+   "pm25": 218.0,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 1379.0
+  },
+  {
+   "date": "2026-08-25",
+   "fire_count": 10,
+   "pm25": 216.5,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 1150.0
+  },
+  {
+   "date": "2026-08-26",
+   "fire_count": 22,
+   "pm25": 234.9,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 1398.0
+  },
+  {
+   "date": "2026-08-27",
+   "fire_count": 24,
+   "pm25": 235.8,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 1205.0
+  },
+  {
+   "date": "2026-08-28",
+   "fire_count": 36,
+   "pm25": 289.4,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 870.0
+  },
+  {
+   "date": "2026-08-29",
+   "fire_count": 27,
+   "pm25": 268.5,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 1178.0
+  },
+  {
+   "date": "2026-08-30",
+   "fire_count": 18,
+   "pm25": 263.3,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 947.0
+  },
+  {
+   "date": "2026-08-31",
+   "fire_count": 30,
+   "pm25": 299.1,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 689.0
+  },
+  {
+   "date": "2026-09-01",
+   "fire_count": 27,
+   "pm25": 295.8,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 813.0
+  },
+  {
+   "date": "2026-09-02",
+   "fire_count": 24,
+   "pm25": 280.3,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 915.0
+  },
+  {
+   "date": "2026-09-03",
+   "fire_count": 26,
+   "pm25": 264.3,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 1187.0
+  },
+  {
+   "date": "2026-09-04",
+   "fire_count": 13,
+   "pm25": 255.5,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 860.0
+  },
+  {
+   "date": "2026-09-05",
+   "fire_count": 42,
+   "pm25": 298.1,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 898.0
+  },
+  {
+   "date": "2026-09-06",
+   "fire_count": 47,
+   "pm25": 319.2,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 1548.0
+  },
+  {
+   "date": "2026-09-07",
+   "fire_count": 33,
+   "pm25": 300.4,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 1236.0
+  },
+  {
+   "date": "2026-09-08",
+   "fire_count": 35,
+   "pm25": 321.4,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 779.0
+  },
+  {
+   "date": "2026-09-09",
+   "fire_count": 41,
+   "pm25": 313.5,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 1171.0
+  },
+  {
+   "date": "2026-09-10",
+   "fire_count": 28,
+   "pm25": 306.6,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 910.0
+  },
+  {
+   "date": "2026-09-11",
+   "fire_count": 45,
+   "pm25": 328.5,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 1060.0
+  },
+  {
+   "date": "2026-09-12",
+   "fire_count": 28,
+   "pm25": 330.8,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 889.0
+  },
+  {
+   "date": "2026-09-13",
+   "fire_count": 50,
+   "pm25": 346.1,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 897.0
+  },
+  {
+   "date": "2026-09-14",
+   "fire_count": 43,
+   "pm25": 339.8,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 970.0
+  },
+  {
+   "date": "2026-09-15",
+   "fire_count": 47,
+   "pm25": 329.5,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 1000.0
+  },
+  {
+   "date": "2026-09-16",
+   "fire_count": 33,
+   "pm25": 324.3,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 895.0
+  },
+  {
+   "date": "2026-09-17",
+   "fire_count": 34,
+   "pm25": 312.2,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 1177.0
+  },
+  {
+   "date": "2026-09-18",
+   "fire_count": 40,
+   "pm25": 337.3,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 356.0
+  },
+  {
+   "date": "2026-09-19",
+   "fire_count": 30,
+   "pm25": 311.7,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 1173.0
+  },
+  {
+   "date": "2026-09-20",
+   "fire_count": 39,
+   "pm25": 308.6,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 1254.0
+  },
+  {
+   "date": "2026-09-21",
+   "fire_count": 37,
+   "pm25": 320.6,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 814.0
+  },
+  {
+   "date": "2026-09-22",
+   "fire_count": 32,
+   "pm25": 308.8,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 1088.0
+  },
+  {
+   "date": "2026-09-23",
+   "fire_count": 35,
+   "pm25": 329.4,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 859.0
+  },
+  {
+   "date": "2026-09-24",
+   "fire_count": 42,
+   "pm25": 321.5,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 858.0
+  },
+  {
+   "date": "2026-09-25",
+   "fire_count": 44,
+   "pm25": 344.6,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 900.0
+  },
+  {
+   "date": "2026-09-26",
+   "fire_count": 36,
+   "pm25": 346.6,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 1076.0
+  },
+  {
+   "date": "2026-09-27",
+   "fire_count": 17,
+   "pm25": 281.9,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 1211.0
+  },
+  {
+   "date": "2026-09-28",
+   "fire_count": 25,
+   "pm25": 277.6,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 784.0
+  },
+  {
+   "date": "2026-09-29",
+   "fire_count": 25,
+   "pm25": 278.5,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 942.0
+  },
+  {
+   "date": "2026-09-30",
+   "fire_count": 37,
+   "pm25": 282.8,
+   "rain": true,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 815.0
+  },
+  {
+   "date": "2026-10-01",
+   "fire_count": 36,
+   "pm25": 321.1,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 609.0
+  },
+  {
+   "date": "2026-10-02",
+   "fire_count": 42,
+   "pm25": 313.0,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 1519.0
+  },
+  {
+   "date": "2026-10-03",
+   "fire_count": 29,
+   "pm25": 317.6,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 955.0
+  },
+  {
+   "date": "2026-10-04",
+   "fire_count": 34,
+   "pm25": 335.2,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 655.0
+  },
+  {
+   "date": "2026-10-05",
+   "fire_count": 19,
+   "pm25": 266.1,
+   "rain": true,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 1108.0
+  },
+  {
+   "date": "2026-10-06",
+   "fire_count": 29,
+   "pm25": 292.5,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 660.0
+  },
+  {
+   "date": "2026-10-07",
+   "fire_count": 41,
+   "pm25": 336.5,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 373.0
+  },
+  {
+   "date": "2026-10-08",
+   "fire_count": 26,
+   "pm25": 313.7,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 770.0
+  },
+  {
+   "date": "2026-10-09",
+   "fire_count": 26,
+   "pm25": 311.2,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 517.0
+  },
+  {
+   "date": "2026-10-10",
+   "fire_count": 36,
+   "pm25": 360.5,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 419.0
+  },
+  {
+   "date": "2026-10-11",
+   "fire_count": 23,
+   "pm25": 320.4,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 713.0
+  },
+  {
+   "date": "2026-10-12",
+   "fire_count": 12,
+   "pm25": 288.6,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 844.0
+  },
+  {
+   "date": "2026-10-13",
+   "fire_count": 9,
+   "pm25": 265.8,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 646.0
+  },
+  {
+   "date": "2026-10-14",
+   "fire_count": 27,
+   "pm25": 286.0,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 588.0
+  },
+  {
+   "date": "2026-10-15",
+   "fire_count": 19,
+   "pm25": 248.6,
+   "rain": true,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 777.0
+  },
+  {
+   "date": "2026-10-16",
+   "fire_count": 34,
+   "pm25": 277.7,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 1088.0
+  },
+  {
+   "date": "2026-10-17",
+   "fire_count": 20,
+   "pm25": 283.6,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 541.0
+  },
+  {
+   "date": "2026-10-18",
+   "fire_count": 25,
+   "pm25": 306.8,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 493.0
+  },
+  {
+   "date": "2026-10-19",
+   "fire_count": 12,
+   "pm25": 296.5,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 529.0
+  },
+  {
+   "date": "2026-10-20",
+   "fire_count": 20,
+   "pm25": 299.3,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 263.0
+  },
+  {
+   "date": "2026-10-21",
+   "fire_count": 20,
+   "pm25": 314.9,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 237.0
+  },
+  {
+   "date": "2026-10-22",
+   "fire_count": 33,
+   "pm25": 331.4,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 1104.0
+  },
+  {
+   "date": "2026-10-23",
+   "fire_count": 8,
+   "pm25": 286.7,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 585.0
+  },
+  {
+   "date": "2026-10-24",
+   "fire_count": 7,
+   "pm25": 299.3,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 341.0
+  },
+  {
+   "date": "2026-10-25",
+   "fire_count": 14,
+   "pm25": 302.1,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 380.0
+  },
+  {
+   "date": "2026-10-26",
+   "fire_count": 6,
+   "pm25": 283.5,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 314.0
+  },
+  {
+   "date": "2026-10-27",
+   "fire_count": 16,
+   "pm25": 294.3,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 705.0
+  },
+  {
+   "date": "2026-10-28",
+   "fire_count": 0,
+   "pm25": 265.2,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 604.0
+  },
+  {
+   "date": "2026-10-29",
+   "fire_count": 21,
+   "pm25": 277.6,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 554.0
+  },
+  {
+   "date": "2026-10-30",
+   "fire_count": 0,
+   "pm25": 247.0,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 778.0
+  },
+  {
+   "date": "2026-10-31",
+   "fire_count": 0,
+   "pm25": 254.6,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 641.0
+  },
+  {
+   "date": "2026-11-01",
+   "fire_count": 3,
+   "pm25": 263.3,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 271.0
+  },
+  {
+   "date": "2026-11-02",
+   "fire_count": 6,
+   "pm25": 275.4,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 714.0
+  },
+  {
+   "date": "2026-11-03",
+   "fire_count": 1,
+   "pm25": 238.3,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 838.0
+  },
+  {
+   "date": "2026-11-04",
+   "fire_count": 5,
+   "pm25": 242.5,
+   "rain": false,
+   "state": "delhi-ncr",
+   "ventilation_index_m2s": 522.0
+  }
+ ]
+}

@@ -1,0 +1,27 @@
+{
+ "metadata": {
+  "dataset_version": "sample-2026.11-v1",
+  "generator": "data/generate_sample.py",
+  "geographic_scope": "Maharashtra - Mumbai-Pune corridor, Panvel (sample)",
+  "is_sample": true,
+  "is_synthetic": true,
+  "notes": "",
+  "reference_timestamp": "2026-11-05T03:00:00+05:30",
+  "source": "Sample official station reading modelled on CPCB CAAQMS patterns (not an actual reading)"
+ },
+ "records": [
+  {
+   "lat": 19.033,
+   "lon": 73.0297,
+   "name": "Navi Mumbai (sample station)",
+   "no2": 31.0,
+   "observed_at": "2026-11-05T02:05:00+05:30",
+   "pm10": 118.0,
+   "pm25": 60.0,
+   "pm25_30d_median": 52.0,
+   "state": "maharashtra",
+   "station_id": "MH-NAVIMUMBAI-SAMPLE",
+   "type": "official"
+  }
+ ]
+}

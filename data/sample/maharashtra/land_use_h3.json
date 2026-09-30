@@ -1,0 +1,199 @@
+{
+ "metadata": {
+  "dataset_version": "sample-2026.11-v1",
+  "generator": "data/generate_sample.py",
+  "geographic_scope": "Maharashtra - Mumbai-Pune corridor, Panvel (sample)",
+  "is_sample": true,
+  "is_synthetic": true,
+  "notes": "",
+  "reference_timestamp": "2026-11-05T03:00:00+05:30",
+  "source": "Synthetic demo land-use labels per H3 cell"
+ },
+ "records": [
+  {
+   "h3_cell": "88608bc181fffff",
+   "land_use": "urban",
+   "state": "maharashtra"
+  },
+  {
+   "h3_cell": "88608bc183fffff",
+   "land_use": "urban",
+   "state": "maharashtra"
+  },
+  {
+   "h3_cell": "88608bc185fffff",
+   "land_use": "urban",
+   "state": "maharashtra"
+  },
+  {
+   "h3_cell": "88608bc187fffff",
+   "land_use": "urban",
+   "state": "maharashtra"
+  },
+  {
+   "h3_cell": "88608bc18bfffff",
+   "land_use": "urban",
+   "state": "maharashtra"
+  },
+  {
+   "h3_cell": "88608bc191fffff",
+   "land_use": "urban",
+   "state": "maharashtra"
+  },
+  {
+   "h3_cell": "88608bc193fffff",
+   "land_use": "construction",
+   "state": "maharashtra"
+  },
+  {
+   "h3_cell": "88608bc195fffff",
+   "land_use": "urban",
+   "state": "maharashtra"
+  },
+  {
+   "h3_cell": "88608bc197fffff",
+   "land_use": "urban",
+   "state": "maharashtra"
+  },
+  {
+   "h3_cell": "88608bc199fffff",
+   "land_use": "urban",
+   "state": "maharashtra"
+  },
+  {
+   "h3_cell": "88608bc19bfffff",
+   "land_use": "urban",
+   "state": "maharashtra"
+  },
+  {
+   "h3_cell": "88608bc19dfffff",
+   "land_use": "urban",
+   "state": "maharashtra"
+  },
+  {
+   "h3_cell": "88608bc1a3fffff",
+   "land_use": "urban",
+   "state": "maharashtra"
+  },
+  {
+   "h3_cell": "88608bc1abfffff",
+   "land_use": "urban",
+   "state": "maharashtra"
+  },
+  {
+   "h3_cell": "88608bc1b1fffff",
+   "land_use": "urban",
+   "state": "maharashtra"
+  },
+  {
+   "h3_cell": "88608bc1b3fffff",
+   "land_use": "urban",
+   "state": "maharashtra"
+  },
+  {
+   "h3_cell": "88608bc1b5fffff",
+   "land_use": "urban",
+   "state": "maharashtra"
+  },
+  {
+   "h3_cell": "88608bc1b7fffff",
+   "land_use": "urban",
+   "state": "maharashtra"
+  },
+  {
+   "h3_cell": "88608bc1b9fffff",
+   "land_use": "urban",
+   "state": "maharashtra"
+  },
+  {
+   "h3_cell": "88608bc1bbfffff",
+   "land_use": "construction",
+   "state": "maharashtra"
+  },
+  {
+   "h3_cell": "88608bc1bdfffff",
+   "land_use": "urban",
+   "state": "maharashtra"
+  },
+  {
+   "h3_cell": "88608bc1d7fffff",
+   "land_use": "urban",
+   "state": "maharashtra"
+  },
+  {
+   "h3_cell": "88608bce45fffff",
+   "land_use": "urban",
+   "state": "maharashtra"
+  },
+  {
+   "h3_cell": "88608bce4dfffff",
+   "land_use": "urban",
+   "state": "maharashtra"
+  },
+  {
+   "h3_cell": "88608bce61fffff",
+   "land_use": "construction",
+   "state": "maharashtra"
+  },
+  {
+   "h3_cell": "88608bce63fffff",
+   "land_use": "urban",
+   "state": "maharashtra"
+  },
+  {
+   "h3_cell": "88608bce65fffff",
+   "land_use": "urban",
+   "state": "maharashtra"
+  },
+  {
+   "h3_cell": "88608bce67fffff",
+   "land_use": "urban",
+   "state": "maharashtra"
+  },
+  {
+   "h3_cell": "88608bce69fffff",
+   "land_use": "construction",
+   "state": "maharashtra"
+  },
+  {
+   "h3_cell": "88608bce6bfffff",
+   "land_use": "urban",
+   "state": "maharashtra"
+  },
+  {
+   "h3_cell": "88608bce6dfffff",
+   "land_use": "construction",
+   "state": "maharashtra"
+  },
+  {
+   "h3_cell": "88608bcf49fffff",
+   "land_use": "urban",
+   "state": "maharashtra"
+  },
+  {
+   "h3_cell": "88608bcf4bfffff",
+   "land_use": "urban",
+   "state": "maharashtra"
+  },
+  {
+   "h3_cell": "88608bcf51fffff",
+   "land_use": "urban",
+   "state": "maharashtra"
+  },
+  {
+   "h3_cell": "88608bcf59fffff",
+   "land_use": "urban",
+   "state": "maharashtra"
+  },
+  {
+   "h3_cell": "88608bcf5bfffff",
+   "land_use": "urban",
+   "state": "maharashtra"
+  },
+  {
+   "h3_cell": "88608bcf5dfffff",
+   "land_use": "urban",
+   "state": "maharashtra"
+  }
+ ]
+}

@@ -1,0 +1,199 @@
+{
+ "metadata": {
+  "dataset_version": "sample-2026.11-v1",
+  "generator": "data/generate_sample.py",
+  "geographic_scope": "Punjab - Sangrur district village cluster (sample)",
+  "is_sample": true,
+  "is_synthetic": true,
+  "notes": "",
+  "reference_timestamp": "2026-11-05T03:00:00+05:30",
+  "source": "Synthetic demo land-use labels per H3 cell"
+ },
+ "records": [
+  {
+   "h3_cell": "883d16d421fffff",
+   "land_use": "agricultural_burn_scar",
+   "state": "punjab"
+  },
+  {
+   "h3_cell": "883d16d423fffff",
+   "land_use": "agricultural",
+   "state": "punjab"
+  },
+  {
+   "h3_cell": "883d16d425fffff",
+   "land_use": "agricultural_burn_scar",
+   "state": "punjab"
+  },
+  {
+   "h3_cell": "883d16d427fffff",
+   "land_use": "agricultural",
+   "state": "punjab"
+  },
+  {
+   "h3_cell": "883d16d42dfffff",
+   "land_use": "agricultural_burn_scar",
+   "state": "punjab"
+  },
+  {
+   "h3_cell": "883d16d435fffff",
+   "land_use": "agricultural",
+   "state": "punjab"
+  },
+  {
+   "h3_cell": "883d16d503fffff",
+   "land_use": "agricultural",
+   "state": "punjab"
+  },
+  {
+   "h3_cell": "883d16d50bfffff",
+   "land_use": "agricultural",
+   "state": "punjab"
+  },
+  {
+   "h3_cell": "883d16d511fffff",
+   "land_use": "agricultural",
+   "state": "punjab"
+  },
+  {
+   "h3_cell": "883d16d513fffff",
+   "land_use": "agricultural",
+   "state": "punjab"
+  },
+  {
+   "h3_cell": "883d16d515fffff",
+   "land_use": "agricultural",
+   "state": "punjab"
+  },
+  {
+   "h3_cell": "883d16d517fffff",
+   "land_use": "agricultural",
+   "state": "punjab"
+  },
+  {
+   "h3_cell": "883d16d519fffff",
+   "land_use": "agricultural_burn_scar",
+   "state": "punjab"
+  },
+  {
+   "h3_cell": "883d16d51bfffff",
+   "land_use": "agricultural_burn_scar",
+   "state": "punjab"
+  },
+  {
+   "h3_cell": "883d16d51dfffff",
+   "land_use": "agricultural",
+   "state": "punjab"
+  },
+  {
+   "h3_cell": "883d16d531fffff",
+   "land_use": "agricultural",
+   "state": "punjab"
+  },
+  {
+   "h3_cell": "883d16d533fffff",
+   "land_use": "agricultural",
+   "state": "punjab"
+  },
+  {
+   "h3_cell": "883d16d539fffff",
+   "land_use": "agricultural",
+   "state": "punjab"
+  },
+  {
+   "h3_cell": "883d16d53bfffff",
+   "land_use": "agricultural",
+   "state": "punjab"
+  },
+  {
+   "h3_cell": "883d16d553fffff",
+   "land_use": "agricultural_burn_scar",
+   "state": "punjab"
+  },
+  {
+   "h3_cell": "883d16d557fffff",
+   "land_use": "agricultural_burn_scar",
+   "state": "punjab"
+  },
+  {
+   "h3_cell": "883d16d589fffff",
+   "land_use": "agricultural",
+   "state": "punjab"
+  },
+  {
+   "h3_cell": "883d16d58dfffff",
+   "land_use": "agricultural",
+   "state": "punjab"
+  },
+  {
+   "h3_cell": "883d16d5c1fffff",
+   "land_use": "agricultural",
+   "state": "punjab"
+  },
+  {
+   "h3_cell": "883d16d5c3fffff",
+   "land_use": "agricultural",
+   "state": "punjab"
+  },
+  {
+   "h3_cell": "883d16d5c5fffff",
+   "land_use": "agricultural",
+   "state": "punjab"
+  },
+  {
+   "h3_cell": "883d16d5c7fffff",
+   "land_use": "agricultural",
+   "state": "punjab"
+  },
+  {
+   "h3_cell": "883d16d5c9fffff",
+   "land_use": "agricultural",
+   "state": "punjab"
+  },
+  {
+   "h3_cell": "883d16d5cbfffff",
+   "land_use": "agricultural",
+   "state": "punjab"
+  },
+  {
+   "h3_cell": "883d16d5cdfffff",
+   "land_use": "agricultural",
+   "state": "punjab"
+  },
+  {
+   "h3_cell": "883d16d5e1fffff",
+   "land_use": "agricultural",
+   "state": "punjab"
+  },
+  {
+   "h3_cell": "883d16d5e3fffff",
+   "land_use": "agricultural",
+   "state": "punjab"
+  },
+  {
+   "h3_cell": "883d16d5e5fffff",
+   "land_use": "agricultural",
+   "state": "punjab"
+  },
+  {
+   "h3_cell": "883d16d5e7fffff",
+   "land_use": "agricultural",
+   "state": "punjab"
+  },
+  {
+   "h3_cell": "883d16d5e9fffff",
+   "land_use": "agricultural",
+   "state": "punjab"
+  },
+  {
+   "h3_cell": "883d16d5ebfffff",
+   "land_use": "agricultural",
+   "state": "punjab"
+  },
+  {
+   "h3_cell": "883d16d5edfffff",
+   "land_use": "agricultural",
+   "state": "punjab"
+  }
+ ]
+}

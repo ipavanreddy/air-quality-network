@@ -1,0 +1,31 @@
+{
+  "id": "punjab",
+  "state_code": "PB",
+  "name": "Punjab",
+  "city": "Sangrur",
+  "corridor": "Sangrur-Patiala agricultural belt",
+  "center": [30.2458, 75.8421],
+  "default_language": "pa",
+  "languages": ["en", "pa", "hi"],
+  "jurisdiction": {"id": "PB-PPCB", "name": "Punjab Pollution Control Board (demo inbox)", "district": "Sangrur"},
+  "hotspot_threshold": 70,
+  "fast_path": {"min_visual_severity": 4, "min_confidence": 0.85},
+  "forecast_model": "igp-smog-forecast-v1",
+  "calibration_model": "lowcost-humidity-calibration-v1",
+  "cross_boundary_neighbours": [
+    {"config_id": "delhi-ncr", "jurisdiction_id": "DL-DPCC", "name": "Delhi NCR", "center": [28.628, 77.295], "sources": ["crop_residue_burning", "waste_burning"]}
+  ],
+  "sensor_feed": {
+    "format": "punjab",
+    "field_map": {"sensor_id": "device", "timestamp": "time_ist", "pm25_raw": "PM2_5", "pm10": "PM10", "temperature": "TEMP", "humidity": "HUM"},
+    "timestamp_format": "%d-%m-%Y %H:%M",
+    "timezone": "+05:30"
+  },
+  "action_rules": [
+    {"id": "PB-FIELD-TEAM", "action": "Dispatch the cluster nodal officer / field team to the reported village cluster", "applies_to": ["crop_residue_burning"], "stage": "any"},
+    {"id": "PB-CRM-OUTREACH", "action": "Arrange crop-residue-management (CRM) machinery outreach to farmers in the cluster", "applies_to": ["crop_residue_burning"], "stage": "any"},
+    {"id": "PB-FARMER-ADVISORY", "action": "Issue a local advisory to farmers on alternatives to stubble burning", "applies_to": ["crop_residue_burning"], "stage": "any"},
+    {"id": "PB-WASTE-BURN-PATROL", "action": "Deploy municipal team to stop open waste burning", "applies_to": ["waste_burning"], "stage": "any"},
+    {"id": "PB-CROSS-BOUNDARY", "action": "Notify the downwind state board (cross-boundary alert) after officer approval", "applies_to": ["crop_residue_burning"], "stage": "any"}
+  ]
+}

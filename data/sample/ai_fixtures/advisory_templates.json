@@ -1,0 +1,34 @@
+{
+ "metadata": {
+  "source": "Hand-written demo advisory templates (English, Hindi, Punjabi) used when Gemini / Cloud Translation are not configured",
+  "reference_timestamp": "2026-11-05T03:00:00+05:30",
+  "dataset_version": "sample-2026.11-v1",
+  "geographic_scope": "all demo states",
+  "is_sample": true,
+  "is_synthetic": true,
+  "notes": "Placeholders: {place}, {category}, {pm}. Translations are demo templates, not officially reviewed."
+ },
+ "category_names": {
+  "en": {"Good": "Good", "Satisfactory": "Satisfactory", "Moderate": "Moderate", "Poor": "Poor", "Very Poor": "Very Poor", "Severe": "Severe"},
+  "hi": {"Good": "अच्छा", "Satisfactory": "संतोषजनक", "Moderate": "मध्यम", "Poor": "खराब", "Very Poor": "बहुत खराब", "Severe": "गंभीर"},
+  "pa": {"Good": "ਚੰਗਾ", "Satisfactory": "ਤਸੱਲੀਬਖਸ਼", "Moderate": "ਦਰਮਿਆਨਾ", "Poor": "ਮਾੜਾ", "Very Poor": "ਬਹੁਤ ਮਾੜਾ", "Severe": "ਗੰਭੀਰ"}
+ },
+ "bucket_by_category": {"Good": "low", "Satisfactory": "low", "Moderate": "low", "Poor": "poor", "Very Poor": "poor", "Severe": "severe"},
+ "templates": {
+  "low": {
+   "en": {"headline": "Air quality in {place} is {category}", "summary": "PM2.5 near you is about {pm} µg/m³. Air quality is acceptable for most people.", "protective_steps": ["Normal outdoor activity is fine for most people.", "People with asthma or heart conditions should keep their medicines handy.", "Avoid burning waste or leaves to keep the air clean."], "sensitive_groups": "Sensitive groups should take breaks during long outdoor activity and watch for symptoms such as coughing."},
+   "hi": {"headline": "{place} में हवा की गुणवत्ता {category} है", "summary": "आपके आसपास PM2.5 लगभग {pm} µg/m³ है। अधिकांश लोगों के लिए हवा ठीक है।", "protective_steps": ["अधिकांश लोगों के लिए सामान्य बाहरी गतिविधि ठीक है।", "दमा या हृदय रोग वाले लोग अपनी दवाइयाँ पास रखें।", "हवा साफ़ रखने के लिए कचरा या पत्ते न जलाएँ।"], "sensitive_groups": "संवेदनशील लोग लंबी बाहरी गतिविधि के दौरान आराम करें और खाँसी जैसे लक्षणों पर ध्यान दें।"},
+   "pa": {"headline": "{place} ਵਿੱਚ ਹਵਾ ਦੀ ਗੁਣਵੱਤਾ {category} ਹੈ", "summary": "ਤੁਹਾਡੇ ਨੇੜੇ PM2.5 ਲਗਭਗ {pm} µg/m³ ਹੈ। ਜ਼ਿਆਦਾਤਰ ਲੋਕਾਂ ਲਈ ਹਵਾ ਠੀਕ ਹੈ।", "protective_steps": ["ਜ਼ਿਆਦਾਤਰ ਲੋਕਾਂ ਲਈ ਆਮ ਬਾਹਰੀ ਸਰਗਰਮੀ ਠੀਕ ਹੈ।", "ਦਮੇ ਜਾਂ ਦਿਲ ਦੀ ਬਿਮਾਰੀ ਵਾਲੇ ਲੋਕ ਆਪਣੀਆਂ ਦਵਾਈਆਂ ਕੋਲ ਰੱਖਣ।", "ਹਵਾ ਸਾਫ਼ ਰੱਖਣ ਲਈ ਕੂੜਾ ਜਾਂ ਪੱਤੇ ਨਾ ਸਾੜੋ।"], "sensitive_groups": "ਸੰਵੇਦਨਸ਼ੀਲ ਲੋਕ ਲੰਬੀ ਬਾਹਰੀ ਸਰਗਰਮੀ ਦੌਰਾਨ ਆਰਾਮ ਕਰਨ ਅਤੇ ਖੰਘ ਵਰਗੇ ਲੱਛਣਾਂ ਵੱਲ ਧਿਆਨ ਦੇਣ।"}
+  },
+  "poor": {
+   "en": {"headline": "Air quality in {place} is {category} — take care outdoors", "summary": "PM2.5 near you is about {pm} µg/m³ and is expected to stay high over the next day. Most people can go about their day but should reduce long or heavy outdoor activity.", "protective_steps": ["Reduce long or strenuous outdoor activity, especially early morning and late evening.", "Wear a well-fitted N95 mask if you must spend time outdoors.", "Keep windows closed at night and in the early morning.", "Avoid burning waste, leaves or wood."], "sensitive_groups": "Children, older adults, pregnant women and people with heart or lung conditions should stay indoors as much as possible and keep their medicines handy."},
+   "hi": {"headline": "{place} में हवा की गुणवत्ता {category} है — बाहर सावधानी रखें", "summary": "आपके आसपास PM2.5 लगभग {pm} µg/m³ है और अगले दिन तक ऊँचा रहने की संभावना है। अधिकांश लोग सामान्य काम कर सकते हैं, पर लंबी या भारी बाहरी गतिविधि कम करें।", "protective_steps": ["लंबी या थकाने वाली बाहरी गतिविधि कम करें, खासकर सुबह जल्दी और देर शाम।", "बाहर जाना ज़रूरी हो तो अच्छी तरह फिट N95 मास्क पहनें।", "रात और सुबह जल्दी खिड़कियाँ बंद रखें।", "कचरा, पत्ते या लकड़ी न जलाएँ।"], "sensitive_groups": "बच्चे, बुज़ुर्ग, गर्भवती महिलाएँ और हृदय या फेफड़ों की बीमारी वाले लोग जितना हो सके घर के अंदर रहें और अपनी दवाइयाँ पास रखें।"},
+   "pa": {"headline": "{place} ਵਿੱਚ ਹਵਾ ਦੀ ਗੁਣਵੱਤਾ {category} ਹੈ — ਬਾਹਰ ਸਾਵਧਾਨੀ ਰੱਖੋ", "summary": "ਤੁਹਾਡੇ ਨੇੜੇ PM2.5 ਲਗਭਗ {pm} µg/m³ ਹੈ ਅਤੇ ਅਗਲੇ ਦਿਨ ਤੱਕ ਉੱਚਾ ਰਹਿਣ ਦੀ ਸੰਭਾਵਨਾ ਹੈ। ਜ਼ਿਆਦਾਤਰ ਲੋਕ ਆਮ ਕੰਮ ਕਰ ਸਕਦੇ ਹਨ, ਪਰ ਲੰਬੀ ਜਾਂ ਭਾਰੀ ਬਾਹਰੀ ਸਰਗਰਮੀ ਘਟਾਓ।", "protective_steps": ["ਲੰਬੀ ਜਾਂ ਥਕਾ ਦੇਣ ਵਾਲੀ ਬਾਹਰੀ ਸਰਗਰਮੀ ਘਟਾਓ, ਖ਼ਾਸ ਕਰਕੇ ਸਵੇਰੇ ਜਲਦੀ ਅਤੇ ਦੇਰ ਸ਼ਾਮ।", "ਜੇ ਬਾਹਰ ਜਾਣਾ ਜ਼ਰੂਰੀ ਹੋਵੇ ਤਾਂ ਚੰਗੀ ਤਰ੍ਹਾਂ ਫਿੱਟ N95 ਮਾਸਕ ਪਾਓ।", "ਰਾਤ ਅਤੇ ਸਵੇਰੇ ਜਲਦੀ ਖਿੜਕੀਆਂ ਬੰਦ ਰੱਖੋ।", "ਕੂੜਾ, ਪੱਤੇ ਜਾਂ ਲੱਕੜ ਨਾ ਸਾੜੋ।"], "sensitive_groups": "ਬੱਚੇ, ਬਜ਼ੁਰਗ, ਗਰਭਵਤੀ ਔਰਤਾਂ ਅਤੇ ਦਿਲ ਜਾਂ ਫੇਫੜਿਆਂ ਦੀ ਬਿਮਾਰੀ ਵਾਲੇ ਲੋਕ ਜਿੰਨਾ ਹੋ ਸਕੇ ਘਰ ਦੇ ਅੰਦਰ ਰਹਿਣ ਅਤੇ ਆਪਣੀਆਂ ਦਵਾਈਆਂ ਕੋਲ ਰੱਖਣ।"}
+  },
+  "severe": {
+   "en": {"headline": "Air quality in {place} is {category} — limit time outdoors", "summary": "PM2.5 near you is about {pm} µg/m³, a level that can affect everyone's health. Stay indoors where possible until conditions improve.", "protective_steps": ["Avoid outdoor exercise and non-essential trips.", "Wear a well-fitted N95 mask whenever you go outside.", "Keep doors and windows closed; use an air purifier if you have one.", "Do not burn waste, leaves, wood or crop residue.", "Seek medical help if you have breathlessness, chest pain or a persistent cough."], "sensitive_groups": "Children, older adults, pregnant women and people with heart or lung conditions should stay indoors, avoid all exertion and follow their doctor's advice."},
+   "hi": {"headline": "{place} में हवा की गुणवत्ता {category} है — बाहर कम से कम समय बिताएँ", "summary": "आपके आसपास PM2.5 लगभग {pm} µg/m³ है, यह स्तर सभी के स्वास्थ्य पर असर डाल सकता है। हालात सुधरने तक जहाँ तक हो सके घर के अंदर रहें।", "protective_steps": ["बाहर व्यायाम और गैर-ज़रूरी यात्राओं से बचें।", "बाहर जाते समय हमेशा अच्छी तरह फिट N95 मास्क पहनें।", "दरवाज़े और खिड़कियाँ बंद रखें; एयर प्यूरीफ़ायर हो तो उसका उपयोग करें।", "कचरा, पत्ते, लकड़ी या फसल के अवशेष न जलाएँ।", "साँस फूलने, सीने में दर्द या लगातार खाँसी होने पर डॉक्टर से संपर्क करें।"], "sensitive_groups": "बच्चे, बुज़ुर्ग, गर्भवती महिलाएँ और हृदय या फेफड़ों की बीमारी वाले लोग घर के अंदर रहें, कोई भी मेहनत वाला काम न करें और डॉक्टर की सलाह मानें।"},
+   "pa": {"headline": "{place} ਵਿੱਚ ਹਵਾ ਦੀ ਗੁਣਵੱਤਾ {category} ਹੈ — ਬਾਹਰ ਘੱਟ ਤੋਂ ਘੱਟ ਸਮਾਂ ਬਿਤਾਓ", "summary": "ਤੁਹਾਡੇ ਨੇੜੇ PM2.5 ਲਗਭਗ {pm} µg/m³ ਹੈ, ਇਹ ਪੱਧਰ ਹਰ ਕਿਸੇ ਦੀ ਸਿਹਤ 'ਤੇ ਅਸਰ ਪਾ ਸਕਦਾ ਹੈ। ਹਾਲਾਤ ਸੁਧਰਨ ਤੱਕ ਜਿੱਥੇ ਤੱਕ ਹੋ ਸਕੇ ਘਰ ਦੇ ਅੰਦਰ ਰਹੋ।", "protective_steps": ["ਬਾਹਰ ਕਸਰਤ ਅਤੇ ਗ਼ੈਰ-ਜ਼ਰੂਰੀ ਸਫ਼ਰ ਤੋਂ ਬਚੋ।", "ਬਾਹਰ ਜਾਂਦੇ ਸਮੇਂ ਹਮੇਸ਼ਾ ਚੰਗੀ ਤਰ੍ਹਾਂ ਫਿੱਟ N95 ਮਾਸਕ ਪਾਓ।", "ਦਰਵਾਜ਼ੇ ਅਤੇ ਖਿੜਕੀਆਂ ਬੰਦ ਰੱਖੋ; ਏਅਰ ਪਿਊਰੀਫਾਇਰ ਹੋਵੇ ਤਾਂ ਉਸ ਦੀ ਵਰਤੋਂ ਕਰੋ।", "ਕੂੜਾ, ਪੱਤੇ, ਲੱਕੜ ਜਾਂ ਫ਼ਸਲ ਦੀ ਰਹਿੰਦ-ਖੂੰਹਦ ਨਾ ਸਾੜੋ।", "ਸਾਹ ਚੜ੍ਹਨ, ਛਾਤੀ ਵਿੱਚ ਦਰਦ ਜਾਂ ਲਗਾਤਾਰ ਖੰਘ ਹੋਣ 'ਤੇ ਡਾਕਟਰ ਨਾਲ ਸੰਪਰਕ ਕਰੋ।"], "sensitive_groups": "ਬੱਚੇ, ਬਜ਼ੁਰਗ, ਗਰਭਵਤੀ ਔਰਤਾਂ ਅਤੇ ਦਿਲ ਜਾਂ ਫੇਫੜਿਆਂ ਦੀ ਬਿਮਾਰੀ ਵਾਲੇ ਲੋਕ ਘਰ ਦੇ ਅੰਦਰ ਰਹਿਣ, ਕੋਈ ਵੀ ਮਿਹਨਤ ਵਾਲਾ ਕੰਮ ਨਾ ਕਰਨ ਅਤੇ ਡਾਕਟਰ ਦੀ ਸਲਾਹ ਮੰਨਣ।"}
+  }
+ }
+}

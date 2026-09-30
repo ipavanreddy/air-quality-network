@@ -1,0 +1,27 @@
+{
+ "metadata": {
+  "dataset_version": "sample-2026.11-v1",
+  "generator": "data/generate_sample.py",
+  "geographic_scope": "Delhi NCR - East Delhi industrial + traffic corridor (sample)",
+  "is_sample": true,
+  "is_synthetic": true,
+  "notes": "",
+  "reference_timestamp": "2026-11-05T03:00:00+05:30",
+  "source": "Sample official station reading modelled on CPCB CAAQMS patterns (not an actual reading)"
+ },
+ "records": [
+  {
+   "lat": 28.6285,
+   "lon": 77.241,
+   "name": "ITO, Delhi (sample station)",
+   "no2": 68.0,
+   "observed_at": "2026-11-05T02:05:00+05:30",
+   "pm10": 230.0,
+   "pm25": 112.0,
+   "pm25_30d_median": 104.0,
+   "state": "delhi-ncr",
+   "station_id": "DL-ITO-SAMPLE",
+   "type": "official"
+  }
+ ]
+}

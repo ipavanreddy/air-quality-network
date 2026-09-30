@@ -1,0 +1,29 @@
+{
+  "id": "maharashtra",
+  "state_code": "MH",
+  "name": "Maharashtra",
+  "city": "Panvel",
+  "corridor": "Mumbai-Pune corridor",
+  "center": [18.9894, 73.1175],
+  "default_language": "en",
+  "languages": ["en", "hi"],
+  "jurisdiction": {"id": "MH-MPCB", "name": "Maharashtra Pollution Control Board (demo inbox)", "district": "Raigad"},
+  "hotspot_threshold": 65,
+  "fast_path": {"min_visual_severity": 4, "min_confidence": 0.85},
+  "forecast_model": "persistence-baseline-v1",
+  "calibration_model": "lowcost-humidity-calibration-v1",
+  "cross_boundary_neighbours": [],
+  "sensor_feed": {
+    "format": "maharashtra",
+    "field_map": {"sensor_id": "id", "timestamp": "timestamp_utc", "pm25_raw": "pm2_5_ugm3", "pm10": "pm10_ugm3", "temperature": "temperature", "humidity": "humidity_pct"},
+    "timestamp_format": "iso8601",
+    "timezone": "+00:00"
+  },
+  "action_rules": [
+    {"id": "MH-SITE-INSPECT", "action": "Inspect construction sites upwind for dust-mitigation compliance (covering, barricading, sprinkling)", "applies_to": ["construction_dust"], "stage": "any"},
+    {"id": "MH-STOP-WORK-REVIEW", "action": "Review stop-work notice for non-compliant sites (officer decision)", "applies_to": ["construction_dust"], "stage": "severe"},
+    {"id": "MH-ROAD-SPRINKLE", "action": "Road sweeping and water sprinkling on approach roads", "applies_to": ["construction_dust", "traffic"], "stage": "any"},
+    {"id": "MH-INSPECT-IND", "action": "Inspection of industrial units upwind", "applies_to": ["industrial_emission"], "stage": "any"},
+    {"id": "MH-WASTE-BURN-PATROL", "action": "Deploy municipal team to stop open waste burning", "applies_to": ["waste_burning"], "stage": "any"}
+  ]
+}

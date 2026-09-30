@@ -1,0 +1,31 @@
+{
+  "id": "delhi-ncr",
+  "state_code": "DL",
+  "name": "Delhi NCR",
+  "city": "Delhi",
+  "corridor": "East Delhi industrial + traffic corridor",
+  "center": [28.628, 77.295],
+  "default_language": "hi",
+  "languages": ["en", "hi"],
+  "jurisdiction": {"id": "DL-DPCC", "name": "Delhi Pollution Control Committee (demo inbox)", "district": "East Delhi"},
+  "hotspot_threshold": 70,
+  "fast_path": {"min_visual_severity": 4, "min_confidence": 0.85},
+  "forecast_model": "igp-smog-forecast-v1",
+  "calibration_model": "lowcost-humidity-calibration-v1",
+  "cross_boundary_neighbours": [],
+  "sensor_feed": {
+    "format": "delhi",
+    "field_map": {"sensor_id": "sensor_id", "timestamp": "ts", "pm25_raw": "pm25", "pm10": "pm10", "temperature": "temp_c", "humidity": "rh"},
+    "timestamp_format": "iso8601",
+    "timezone": "+05:30"
+  },
+  "action_rules": [
+    {"id": "DL-INSPECT-IND-NIGHT", "action": "Night-time inspection of industrial units upwind of the affected cells", "applies_to": ["industrial_emission"], "stage": "any"},
+    {"id": "DL-STACK-MONITOR", "action": "Check stack emission monitoring / online CEMS data of nearby units", "applies_to": ["industrial_emission"], "stage": "any"},
+    {"id": "DL-WASTE-BURN-PATROL", "action": "Deploy patrol team to locate and stop open waste burning", "applies_to": ["waste_burning"], "stage": "any"},
+    {"id": "DL-TRAFFIC-DECONGEST", "action": "Coordinate with traffic police to decongest the corridor at peak hours", "applies_to": ["traffic"], "stage": "any"},
+    {"id": "DL-DUST-SPRINKLE", "action": "Mechanised road sweeping and water sprinkling in affected wards", "applies_to": ["construction_dust", "traffic"], "stage": "any"},
+    {"id": "DL-GRAP-REVIEW", "action": "Review whether the next GRAP stage should be recommended to the CAQM sub-committee", "applies_to": ["*"], "stage": "severe"},
+    {"id": "DL-CROSS-BOUNDARY-LIAISON", "action": "Liaise with the upwind state board on incoming crop-residue smoke", "applies_to": ["crop_residue_burning"], "stage": "any"}
+  ]
+}

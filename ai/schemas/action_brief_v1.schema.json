@@ -1,0 +1,164 @@
+{
+  "$defs": {
+    "EvidenceItem": {
+      "properties": {
+        "signal": {
+          "title": "Signal",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "string"
+        },
+        "source": {
+          "title": "Source",
+          "type": "string"
+        },
+        "observed": {
+          "title": "Observed",
+          "type": "string"
+        }
+      },
+      "required": [
+        "signal",
+        "value",
+        "source",
+        "observed"
+      ],
+      "title": "EvidenceItem",
+      "type": "object"
+    },
+    "LikelySource": {
+      "properties": {
+        "type": {
+          "enum": [
+            "crop_residue_burning",
+            "waste_burning",
+            "industrial_emission",
+            "construction_dust",
+            "traffic",
+            "other_unknown"
+          ],
+          "title": "Type",
+          "type": "string"
+        },
+        "confidence": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "rationale": {
+          "title": "Rationale",
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "confidence",
+        "rationale"
+      ],
+      "title": "LikelySource",
+      "type": "object"
+    },
+    "RecommendedAction": {
+      "properties": {
+        "action_id": {
+          "title": "Action Id",
+          "type": "string"
+        },
+        "action": {
+          "title": "Action",
+          "type": "string"
+        },
+        "priority": {
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ],
+          "title": "Priority",
+          "type": "string"
+        }
+      },
+      "required": [
+        "action_id",
+        "action",
+        "priority"
+      ],
+      "title": "RecommendedAction",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "summary": {
+      "title": "Summary",
+      "type": "string"
+    },
+    "risk_level": {
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "severe"
+      ],
+      "title": "Risk Level",
+      "type": "string"
+    },
+    "likely_sources": {
+      "items": {
+        "$ref": "#/$defs/LikelySource"
+      },
+      "title": "Likely Sources",
+      "type": "array"
+    },
+    "evidence": {
+      "items": {
+        "$ref": "#/$defs/EvidenceItem"
+      },
+      "title": "Evidence",
+      "type": "array"
+    },
+    "forecast_outlook": {
+      "title": "Forecast Outlook",
+      "type": "string"
+    },
+    "recommended_actions": {
+      "items": {
+        "$ref": "#/$defs/RecommendedAction"
+      },
+      "title": "Recommended Actions",
+      "type": "array"
+    },
+    "uncertainties": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Uncertainties",
+      "type": "array"
+    },
+    "confidence": {
+      "maximum": 1,
+      "minimum": 0,
+      "title": "Confidence",
+      "type": "number"
+    },
+    "requires_human_review": {
+      "title": "Requires Human Review",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "summary",
+    "risk_level",
+    "likely_sources",
+    "evidence",
+    "forecast_outlook",
+    "recommended_actions",
+    "uncertainties",
+    "confidence",
+    "requires_human_review"
+  ],
+  "title": "ActionBrief",
+  "type": "object"
+}

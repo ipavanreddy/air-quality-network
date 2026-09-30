@@ -1,0 +1,64 @@
+{
+  "properties": {
+    "is_pollution_event": {
+      "title": "Is Pollution Event",
+      "type": "boolean"
+    },
+    "source_type": {
+      "enum": [
+        "crop_residue_burning",
+        "waste_burning",
+        "industrial_emission",
+        "construction_dust",
+        "traffic",
+        "other_unknown"
+      ],
+      "title": "Source Type",
+      "type": "string"
+    },
+    "visual_severity": {
+      "description": "0 = none, 5 = extreme",
+      "maximum": 5,
+      "minimum": 0,
+      "title": "Visual Severity",
+      "type": "integer"
+    },
+    "observed_indicators": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Observed Indicators",
+      "type": "array"
+    },
+    "confidence": {
+      "maximum": 1,
+      "minimum": 0,
+      "title": "Confidence",
+      "type": "number"
+    },
+    "image_quality_ok": {
+      "title": "Image Quality Ok",
+      "type": "boolean"
+    },
+    "requires_human_review": {
+      "title": "Requires Human Review",
+      "type": "boolean"
+    },
+    "explanation": {
+      "title": "Explanation",
+      "type": "string"
+    }
+  },
+  "required": [
+    "is_pollution_event",
+    "source_type",
+    "visual_severity",
+    "observed_indicators",
+    "confidence",
+    "image_quality_ok",
+    "requires_human_review",
+    "explanation"
+  ],
+  "title": "PhotoVerification",
+  "type": "object"
+}

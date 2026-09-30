@@ -1,0 +1,27 @@
+{
+ "metadata": {
+  "dataset_version": "sample-2026.11-v1",
+  "generator": "data/generate_sample.py",
+  "geographic_scope": "Punjab - Sangrur district village cluster (sample)",
+  "is_sample": true,
+  "is_synthetic": true,
+  "notes": "",
+  "reference_timestamp": "2026-11-05T03:00:00+05:30",
+  "source": "Sample official station reading modelled on CPCB CAAQMS patterns (not an actual reading)"
+ },
+ "records": [
+  {
+   "lat": 30.3398,
+   "lon": 76.3869,
+   "name": "Patiala (sample station)",
+   "no2": 22.0,
+   "observed_at": "2026-11-05T02:05:00+05:30",
+   "pm10": 205.0,
+   "pm25": 118.0,
+   "pm25_30d_median": 96.0,
+   "state": "punjab",
+   "station_id": "PB-PATIALA-SAMPLE",
+   "type": "official"
+  }
+ ]
+}

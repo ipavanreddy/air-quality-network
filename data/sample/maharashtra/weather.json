@@ -1,0 +1,47 @@
+{
+ "current": {
+  "boundary_layer_m": 600,
+  "humidity": 70,
+  "observed_at": "2026-11-05T02:30:00+05:30",
+  "rain_mm": 0.0,
+  "source": "ERA5-Land reanalysis (sample extract)",
+  "state": "maharashtra",
+  "temperature_c": 27.0,
+  "wind_dir_deg": 250,
+  "wind_speed_ms": 2.5
+ },
+ "forecast": {
+  "issued_at": "2026-11-05T00:00:00+05:30",
+  "source": "NOAA GFS 0.25 (sample extract)",
+  "steps": [
+   {
+    "fire_count_upwind_forecast": 0,
+    "horizon_hours": 24,
+    "rain_mm": 0,
+    "ventilation_index_m2s": 1500
+   },
+   {
+    "fire_count_upwind_forecast": 0,
+    "horizon_hours": 48,
+    "rain_mm": 0,
+    "ventilation_index_m2s": 1650
+   },
+   {
+    "fire_count_upwind_forecast": 0,
+    "horizon_hours": 72,
+    "rain_mm": 0,
+    "ventilation_index_m2s": 1400
+   }
+  ]
+ },
+ "metadata": {
+  "dataset_version": "sample-2026.11-v1",
+  "generator": "data/generate_sample.py",
+  "geographic_scope": "Maharashtra - Mumbai-Pune corridor, Panvel (sample)",
+  "is_sample": true,
+  "is_synthetic": true,
+  "notes": "",
+  "reference_timestamp": "2026-11-05T03:00:00+05:30",
+  "source": "Sample weather shaped like ERA5-Land (current) and GFS (72h forecast) output"
+ }
+}

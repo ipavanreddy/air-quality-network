@@ -1,0 +1,36 @@
+{
+  "properties": {
+    "headline": {
+      "title": "Headline",
+      "type": "string"
+    },
+    "category": {
+      "title": "Category",
+      "type": "string"
+    },
+    "summary": {
+      "title": "Summary",
+      "type": "string"
+    },
+    "protective_steps": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Protective Steps",
+      "type": "array"
+    },
+    "sensitive_groups": {
+      "title": "Sensitive Groups",
+      "type": "string"
+    }
+  },
+  "required": [
+    "headline",
+    "category",
+    "summary",
+    "protective_steps",
+    "sensitive_groups"
+  ],
+  "title": "HealthAdvisory",
+  "type": "object"
+}
